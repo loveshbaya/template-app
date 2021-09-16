@@ -3,10 +3,14 @@ import * as BarCodeScanner from 'expo-barcode-scanner';
 import { BlurView } from 'expo-blur';
 import { throttle } from 'lodash';
 import React from 'react';
-import { Linking, Platform, StatusBar, StyleSheet, Text, View } from 'react-native';
+import {Block, Button, Image, Input, Product, Text} from "../components";
+import { Linking, Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Camera } from 'expo-camera';
+import {useData, useTheme, useTranslation} from "../hooks";
 import { AllStackRoutes } from '../navigation/Navigation.types';
+import QRFooterButton from "../components/QRFooterButton";
+import QRIndicator from "../components/QRIndicator";
 
 type State = {
     isVisible: boolean;
@@ -23,6 +27,7 @@ export default function BarCodeScreen(
         initialState
     );
     const [isLit, setLit] = React.useState(false);
+    const {assets, colors, fonts, gradients, sizes} = useTheme();
 
     React.useEffect(() => {
         let timeout: ReturnType<typeof setTimeout>;
@@ -81,38 +86,40 @@ export default function BarCodeScreen(
     const { top, bottom } = useSafeAreaInsets();
 
     return (
-        <View style={styles.container}>
-            {state.isVisible ? (
-                <Camera
-                    barCodeScannerSettings={{
-                        barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],
-                    }}
-                    onBarCodeScanned={_handleBarCodeScanned}
-                    style={StyleSheet.absoluteFill}
-                    flashMode={isLit ? 'torch' : 'off'}
-                />
-            ) : null}
+        <Block safe marginTop={sizes.s}>
+            <View style={styles.container}>
+                {state.isVisible ? (
+                    <Camera
+                        barCodeScannerSettings={{
+                            barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],
+                        }}
+                        onBarCodeScanned={_handleBarCodeScanned}
+                        style={StyleSheet.absoluteFill}
+                        flashMode={isLit ? 'torch' : 'off'}
+                    />
+                ) : null}
 
-            <View style={[styles.header, { top: 40 + top }]}>
-                <Hint>Scan QR code</Hint>
+                <View style={[styles.header, { top: 40 + top }]}>
+                    <Hint>Scan QR code</Hint>
+                </View>
+
+                <QRIndicator />
+
+                <View style={[styles.footer, { bottom: 30 + bottom }]}>
+                    <QRFooterButton onPress={onFlashToggle} isActive={isLit} iconName="ios-flashlight" />
+                    <QRFooterButton onPress={onCancel} iconName="ios-close" iconSize={48} />
+                </View>
+
+                <StatusBar barStyle="light-content" backgroundColor="#000" />
             </View>
-
-            {/*<QRIndicator />*/}
-{/*
-            <View style={[styles.footer, { bottom: 30 + bottom }]}>
-                <QRFooterButton onPress={onFlashToggle} isActive={isLit} iconName="ios-flashlight" />
-                <QRFooterButton onPress={onCancel} iconName="ios-close" iconSize={48} />
-            </View>*/}
-
-            <StatusBar barStyle="light-content" backgroundColor="#000" />
-        </View>
+        </Block>
     );
 }
 
 function Hint({ children }: { children: string }) {
     return (
         <BlurView style={styles.hint} intensity={100} tint="dark">
-            <Text style={styles.headerText}>{children}</Text>
+            <Text p white={true}>{children}</Text>
         </BlurView>
     );
 }
