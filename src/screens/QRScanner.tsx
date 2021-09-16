@@ -1,60 +1,157 @@
-import {useData, useTheme, useTranslation} from "../hooks";
-import React, {useCallback, useState, useEffect} from "react";
+import { StackScreenProps } from '@react-navigation/stack';
+import * as BarCodeScanner from 'expo-barcode-scanner';
+import { BlurView } from 'expo-blur';
+import { throttle } from 'lodash';
+import React from 'react';
+import { Linking, Platform, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Camera } from 'expo-camera';
+import { AllStackRoutes } from '../navigation/Navigation.types';
 
-import { StyleSheet } from 'react-native';
-import {Block, Button, Image, Input, Product, Text} from "../components";
-import { BarCodeScanner } from 'expo-barcode-scanner';
-
-const QRScanner = () => {
-    const {t} = useTranslation();
-    const {assets, colors, fonts, gradients, sizes} = useTheme();
-
-    const [hasPermission, setHasPermission] = useState(null);
-    const [scanned, setScanned] = useState(false);
-
-    useEffect(() => {
-        (async () => {
-            const { status } = await BarCodeScanner.requestPermissionsAsync();
-            if ('granted' !== status) {
-                alert(`This app require camera permission to work.`);
-            }
-            setHasPermission('granted' === status);
-        })();
-    }, []);
-
-    const handleBarCodeScanned = ({ type, data }) => {
-        setScanned(true);
-        alert(`Bar code with type ${type} and data ${data} has been scanned!`);
-    };
-
-    if (hasPermission === null) {
-        return <Text>Requesting for camera permission</Text>;
-    }
-    if (hasPermission === false) {
-        return <Text>No access to camera</Text>;
-    }
-
-    return (
-        <Block safe marginTop={sizes.md}>
-            {/* search input */}
-            <Block marginTop={sizes.xl} color={colors.card} flex={3} padding={sizes.padding}>
-                <BarCodeScanner
-                    onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-                    style={StyleSheet.absoluteFillObject}
-                />
-            </Block>
-            <Block color={colors.card} flex={1} padding={sizes.padding}>
-                {scanned && <Button onPress={() => setScanned(false)}>
-                    <Block row align="center">
-                        <Text p >
-                            {'Tap to scan again'}
-                        </Text>
-                    </Block>
-                </Button>}
-            </Block>
-
-        </Block>
-    );
+type State = {
+    isVisible: boolean;
+    url: null | string;
 };
 
-export default QRScanner;
+const initialState: State = { isVisible: Platform.OS === 'ios', url: null };
+
+export default function BarCodeScreen(
+    props: StackScreenProps<AllStackRoutes, 'Diagnostics'> & State
+) {
+    const [state, setState] = React.useReducer(
+        (props: State, state: Partial<State>): State => ({ ...props, ...state }),
+        initialState
+    );
+    const [isLit, setLit] = React.useState(false);
+
+    React.useEffect(() => {
+        let timeout: ReturnType<typeof setTimeout>;
+        if (!state.isVisible) {
+            timeout = setTimeout(() => {
+                setState({ isVisible: true });
+            }, 800);
+        }
+        return () => {
+            clearTimeout(timeout);
+        };
+    }, []);
+
+    React.useEffect(() => {
+        if (!state.isVisible && state.url) {
+            openUrl(state.url);
+        }
+    }, [state.isVisible, state.url]);
+
+    const _handleBarCodeScanned = throttle(({ data: url }) => {
+        alert("Scan data")
+        setState({ isVisible: false, url });
+    }, 1000);
+
+    const openUrl = (url: string) => {
+        props.navigation.pop();
+
+        setTimeout(
+            () => {
+                // note(brentvatne): Manually reset the status bar before opening the
+                // experience so that we restore the correct status bar color when
+                // returning to home
+                StatusBar.setBarStyle('default');
+                Linking.openURL(url);
+            },
+            Platform.select({
+                ios: 16,
+                // note(brentvatne): Give the modal a bit of time to dismiss on Android
+                default: 500,
+            })
+        );
+    };
+
+    const onCancel = React.useCallback(() => {
+        if (Platform.OS === 'ios') {
+            props.navigation.pop();
+        } else {
+            props.navigation.goBack();
+        }
+    }, []);
+
+    const onFlashToggle = React.useCallback(() => {
+        setLit((isLit) => !isLit);
+    }, []);
+
+    const { top, bottom } = useSafeAreaInsets();
+
+    return (
+        <View style={styles.container}>
+            {state.isVisible ? (
+                <Camera
+                    barCodeScannerSettings={{
+                        barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],
+                    }}
+                    onBarCodeScanned={_handleBarCodeScanned}
+                    style={StyleSheet.absoluteFill}
+                    flashMode={isLit ? 'torch' : 'off'}
+                />
+            ) : null}
+
+            <View style={[styles.header, { top: 40 + top }]}>
+                <Hint>Scan QR code</Hint>
+            </View>
+
+            {/*<QRIndicator />*/}
+{/*
+            <View style={[styles.footer, { bottom: 30 + bottom }]}>
+                <QRFooterButton onPress={onFlashToggle} isActive={isLit} iconName="ios-flashlight" />
+                <QRFooterButton onPress={onCancel} iconName="ios-close" iconSize={48} />
+            </View>*/}
+
+            <StatusBar barStyle="light-content" backgroundColor="#000" />
+        </View>
+    );
+}
+
+function Hint({ children }: { children: string }) {
+    return (
+        <BlurView style={styles.hint} intensity={100} tint="dark">
+            <Text style={styles.headerText}>{children}</Text>
+        </BlurView>
+    );
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#000',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    hint: {
+        paddingHorizontal: 16,
+        paddingVertical: 20,
+        borderRadius: 16,
+        overflow: 'hidden',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    header: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        alignItems: 'center',
+    },
+    headerText: {
+        color: '#fff',
+        backgroundColor: 'transparent',
+        textAlign: 'center',
+        fontSize: 16,
+        fontWeight: '500',
+    },
+    footer: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingHorizontal: '10%',
+    },
+});
