@@ -48,7 +48,7 @@ export default function BarCodeScreen(
     }, [state.isVisible, state.url]);
 
     const _handleBarCodeScanned = throttle(({ data: url }) => {
-        alert("Scan data")
+        alert("Scan data: "+url)
         setState({ isVisible: false, url });
     }, 1000);
 
