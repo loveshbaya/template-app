@@ -36,7 +36,7 @@ const QRInfo = (urlObj) => {
 
   return ( 
     <Block safe marginTop={sizes.md} marginBottom={sizes.md}>
-      <Block scroll showsVerticalScrollIndicator={false}>
+      <Block scroll showsVerticalScrollIndicator={true}>
       <Cards></Cards>
       <Cards></Cards>
       <Cards></Cards>
