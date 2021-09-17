@@ -238,6 +238,7 @@ export interface ThemeIcons {
   rental: ImageSourcePropType;
   search: ImageSourcePropType;
   settings: ImageSourcePropType;
+  blank_template:ImageSourcePropType;
   star: ImageSourcePropType;
   train: ImageSourcePropType;
   users: ImageSourcePropType;

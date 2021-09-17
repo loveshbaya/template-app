@@ -62,6 +62,7 @@
     "rental": "Rental",
     "profile": "Profile",
     "settings": "Settings",
+    "blank_template":"Blank Temp",
     "register": "Create account",
     "extra": "Extra - Automotive",
     "qrscanner": "QR Scanner"
@@ -76,6 +77,7 @@
     "chat": "Chat",
     "profile": "Profile",
     "settings": "Settings",
+    "blank_template":"Blank Temp",
     "notifications": "Notifications",
     "agreement": "User Agreement",
     "about": "About",
