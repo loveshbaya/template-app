@@ -3,11 +3,11 @@ import * as BarCodeScanner from 'expo-barcode-scanner';
 import { BlurView } from 'expo-blur';
 import { throttle } from 'lodash';
 import React from 'react';
-import {Block, Button, Image, Input, Product, Text} from "../components";
+import { Block, Button, Image, Input, Product, Text } from "../components";
 import { Linking, Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Camera } from 'expo-camera';
-import {useData, useTheme, useTranslation} from "../hooks";
+import { useData, useTheme, useTranslation } from "../hooks";
 import { AllStackRoutes } from '../navigation/Navigation.types';
 import QRFooterButton from "../components/QRFooterButton";
 import QRIndicator from "../components/QRIndicator";
@@ -18,7 +18,6 @@ type State = {
 };
 
 const initialState: State = { isVisible: Platform.OS === 'ios', url: null };
-
 export default function BarCodeScreen(
     props: StackScreenProps<AllStackRoutes, 'Diagnostics'> & State
 ) {
@@ -27,8 +26,8 @@ export default function BarCodeScreen(
         initialState
     );
     const [isLit, setLit] = React.useState(false);
-    const {assets, colors, fonts, gradients, sizes} = useTheme();
-
+    const { assets, colors, fonts, gradients, sizes } = useTheme();
+    const [hasPermission, setHasPermission] = React.useState(null);
     React.useEffect(() => {
         let timeout: ReturnType<typeof setTimeout>;
         if (!state.isVisible) {
@@ -47,9 +46,14 @@ export default function BarCodeScreen(
         }
     }, [state.isVisible, state.url]);
 
+    React.useEffect(() => { (async () => { const { status } = await Camera.requestPermissionsAsync(); setHasPermission(status === 'granted'); })(); }, []);
+
+
+
+
     const _handleBarCodeScanned = throttle(({ data: url }) => {
-        alert("Scan data: "+url)
-        setState({ isVisible: false, url });
+        alert("Scan data: " + url)
+        // setState({ isVisible: false, url });
     }, 1000);
 
     const openUrl = (url: string) => {
