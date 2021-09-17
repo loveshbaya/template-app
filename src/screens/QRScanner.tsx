@@ -11,6 +11,8 @@ import { useData, useTheme, useTranslation } from "../hooks";
 import { AllStackRoutes } from '../navigation/Navigation.types';
 import QRFooterButton from "../components/QRFooterButton";
 import QRIndicator from "../components/QRIndicator";
+import {useNavigation} from '@react-navigation/core';
+import { NavigationHelpersContext } from '@react-navigation/native';
 
 type State = {
     isVisible: boolean;
@@ -21,6 +23,7 @@ const initialState: State = { isVisible: Platform.OS === 'ios', url: null };
 export default function BarCodeScreen(
     props: StackScreenProps<AllStackRoutes, 'Diagnostics'> & State
 ) {
+    const navigation = useNavigation();
     const [state, setState] = React.useReducer(
         (props: State, state: Partial<State>): State => ({ ...props, ...state }),
         initialState
@@ -54,6 +57,7 @@ export default function BarCodeScreen(
     const _handleBarCodeScanned = throttle(({ data: url }) => {
         alert("Scan data: " + url)
         // setState({ isVisible: false, url });
+        navigation.navigate('QRInfo',{url})
     }, 1000);
 
     const openUrl = (url: string) => {

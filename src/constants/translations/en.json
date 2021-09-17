@@ -63,6 +63,7 @@
     "profile": "Profile",
     "settings": "Settings",
     "blank_template":"Blank Temp",
+    "qrinfo":"QR Info",
     "register": "Create account",
     "extra": "Extra - Automotive",
     "qrscanner": "QR Scanner"
@@ -78,6 +79,7 @@
     "profile": "Profile",
     "settings": "Settings",
     "blank_template":"Blank Temp",
+    "qrinfo":"QR Info",
     "notifications": "Notifications",
     "agreement": "User Agreement",
     "about": "About",

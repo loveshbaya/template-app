@@ -19,3 +19,4 @@ export {default as Shopping} from './Pro';
 export {default as Pro} from './Pro';
 export {default as QRScanner} from './QRScanner';
 export {default as BlankTemplate} from './BlankTemplate';
+export {default as QRInfo} from './QRInfo';

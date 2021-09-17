@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {Articles, Components, Home, Profile, Register, Pro, QRScanner,BlankTemplate} from '../screens';
+import {Articles, Components, Home, Profile, Register, Pro, QRScanner,BlankTemplate, QRInfo} from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
 const Stack = createStackNavigator();
@@ -53,6 +53,12 @@ export default () => {
     <Stack.Screen
           name="BlankTemplate"
           component={BlankTemplate}
+          options={{headerShown: false}}
+      />
+
+  <Stack.Screen
+          name="QRInfo"
+          component={QRInfo}
           options={{headerShown: false}}
       />
     </Stack.Navigator>
