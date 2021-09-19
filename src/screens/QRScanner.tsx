@@ -2,7 +2,7 @@ import { StackScreenProps } from '@react-navigation/stack';
 import * as BarCodeScanner from 'expo-barcode-scanner';
 import { BlurView } from 'expo-blur';
 import { throttle } from 'lodash';
-import React from 'react';
+import React, {useState} from 'react';
 import { Block, Button, Image, Input, Product, Text } from "../components";
 import { Linking, Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -31,6 +31,8 @@ export default function BarCodeScreen(
     const [isLit, setLit] = React.useState(false);
     const { assets, colors, fonts, gradients, sizes } = useTheme();
     const [hasPermission, setHasPermission] = React.useState(null);
+    const [qrcode, setQrcode] = useState([])
+
     React.useEffect(() => {
         let timeout: ReturnType<typeof setTimeout>;
         if (!state.isVisible) {
@@ -55,9 +57,10 @@ export default function BarCodeScreen(
 
 
     const _handleBarCodeScanned = throttle(({ data: url }) => {
-        alert("Scan data: " + url)
+        setQrcode(qrcode => [...qrcode, url])
+        console.log("url datas in qr scanner "+ JSON.stringify(qrcode) + "URL  : ", JSON.stringify(url))
         // setState({ isVisible: false, url });
-        navigation.navigate('QRInfo',{url})
+        navigation.navigate('QRInfo',{url: url, qrcode: qrcode})
     }, 1000);
 
     const openUrl = (url: string) => {
