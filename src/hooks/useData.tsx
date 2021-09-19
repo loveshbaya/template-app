@@ -31,6 +31,7 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
   const [categories, setCategories] = useState<ICategory[]>(CATEGORIES);
   const [articles, setArticles] = useState<IArticle[]>(ARTICLES);
   const [article, setArticle] = useState<IArticle>({});
+  const [qrCodes, setQrCodes] = useState([])
 
   // get isDark mode from storage
   const getIsDark = useCallback(async () => {
@@ -87,6 +88,15 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
     [article, setArticle],
   );
 
+  const handleQrCode = useCallback( (urlObject: string) => {
+    if(urlObject !== null && !qrCodes.includes(urlObject)){
+      setQrCodes([...qrCodes, urlObject])
+    }
+  }, [qrCodes, setQrCodes]);
+
+  const getQrCodes = function (){
+    return qrCodes;
+  }
   // get initial data for: isDark & language
   useEffect(() => {
     getIsDark();
@@ -116,6 +126,9 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
     setArticles,
     article,
     handleArticle,
+    setQrCodes,
+    handleQrCode,
+    getQrCodes,
   };
 
   return (

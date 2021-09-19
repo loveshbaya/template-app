@@ -19,6 +19,11 @@ export interface ICategory {
   id?: number;
   name?: string;
 }
+
+export interface IURLObject {
+  url?: string;
+}
+
 export interface IArticleOptions {
   id?: number;
   title?: string;
@@ -84,6 +89,8 @@ export interface IUseData {
   handleArticle: (data?: IArticle) => void;
   notifications: INotification[];
   handleNotifications: (data?: INotification[]) => void;
+  handleQrCode: (data?: string) => void;
+  getQrCodes:() => string[];
 }
 
 export interface ITranslate {

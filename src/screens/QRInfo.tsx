@@ -43,7 +43,7 @@ const QRInfo = (params) => {
               params.route.params.qrcode.map((data, index) =>{
                   console.log("data from for " + JSON.stringify(data))
                   return (
-                      <Cards data={data}></Cards>
+                      <Cards key={index} data={data}></Cards>
                   );
               })
           }

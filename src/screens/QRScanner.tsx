@@ -31,7 +31,7 @@ export default function BarCodeScreen(
     const [isLit, setLit] = React.useState(false);
     const { assets, colors, fonts, gradients, sizes } = useTheme();
     const [hasPermission, setHasPermission] = React.useState(null);
-    const [qrcode, setQrcode] = useState([])
+    const data = useData();
 
     React.useEffect(() => {
         let timeout: ReturnType<typeof setTimeout>;
@@ -57,10 +57,10 @@ export default function BarCodeScreen(
 
 
     const _handleBarCodeScanned = throttle(({ data: url }) => {
-        setQrcode(qrcode => [...qrcode, url])
-        console.log("url datas in qr scanner "+ JSON.stringify(qrcode) + "URL  : ", JSON.stringify(url))
+        data.handleQrCode ( url)
+        console.log("url datas in qr scanner "+ JSON.stringify(data.getQrCodes()) + "URL  : ", JSON.stringify(url))
         // setState({ isVisible: false, url });
-        navigation.navigate('QRInfo',{url: url, qrcode: qrcode})
+        navigation.navigate('QRInfo',{url: url, qrcode: data.getQrCodes()})
     }, 1000);
 
     const openUrl = (url: string) => {
