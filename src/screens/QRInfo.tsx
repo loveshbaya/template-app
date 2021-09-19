@@ -1,9 +1,9 @@
-import React, {useCallback, useState} from 'react';
-import {Platform, Linking} from 'react-native';
+import React from 'react';
+import {Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 
-import {Block, Button, Image, Text} from '../components/';
-import {useData, useTheme, useTranslation} from '../hooks/';
+import {Block, Text} from '../components/';
+import {useTheme, useTranslation} from '../hooks/';
 
 const isAndroid = Platform.OS === 'android';
 
@@ -18,15 +18,17 @@ const QRInfo = (params) => {
 
   const Cards = (data) => {
     const {assets, colors, gradients, sizes} = useTheme();
-
+      let url = data.data;
+      console.log("url is", url)
     return (
+
       <Block marginTop={sizes.m}  paddingHorizontal={sizes.padding}>
         {/* single card */}
         <Block>
           <Block card row>
 
             <Block padding={sizes.s} justify="space-between">
-              <Text p>{JSON.stringify(data)}</Text>
+                <Text p>{url}</Text>
             </Block>
           </Block>
         </Block>
