@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform} from 'react-native';
+import {BackHandler, Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 
 import {Block, Text} from '../components/';
@@ -7,12 +7,25 @@ import {useTheme, useTranslation} from '../hooks/';
 
 const isAndroid = Platform.OS === 'android';
 
-let mySet = new Set();
-
 const QRInfo = (params) => {
   const {t} = useTranslation();
   const navigation = useNavigation();
   const {assets, colors, sizes} = useTheme();
+
+    function backButtonHandler() {
+        console.log("Back handler called. current is: ", this.props);
+        navigation.navigate('Home')
+    }
+
+    React.useEffect(() => {
+        BackHandler.addEventListener("hardwareBackPress", backButtonHandler);
+
+        return () => {
+            BackHandler.removeEventListener("hardwareBackPress", backButtonHandler);
+        };
+    }, [backButtonHandler]);
+
+
   console.log("QRInfo called",params.route.params.url, "url datas : ", params.route.params.qrcode)
 
 
@@ -35,8 +48,6 @@ const QRInfo = (params) => {
        </Block>
     );
   };
-
-
 
   return (
     <Block safe marginTop={sizes.md} marginBottom={sizes.md}>

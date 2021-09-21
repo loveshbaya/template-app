@@ -51,7 +51,14 @@ export default function BarCodeScreen(
         }
     }, [state.isVisible, state.url]);
 
-    React.useEffect(() => { (async () => { const { status } = await Camera.requestPermissionsAsync(); setHasPermission(status === 'granted'); })(); }, []);
+    React.useEffect(() => { (async () =>
+        {
+            const { status } = await Camera.requestPermissionsAsync();
+            console.log("Status of camera permission : ", status);
+            setHasPermission(status === 'granted');
+        }
+        )();
+    }, []);
 
 
 
