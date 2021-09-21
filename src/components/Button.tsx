@@ -238,7 +238,7 @@ const Button = ({
         ? 'logo-facebook'
         : social === 'twitter'
         ? 'logo-twitter'
-        : 'logo-dribbble';
+        : social;
 
     return (
       <TouchableOpacity
