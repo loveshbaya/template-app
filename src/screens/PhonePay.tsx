@@ -4,6 +4,7 @@ import {useNavigation} from '@react-navigation/core';
 
 import {Block, Button, Image, Text, Input} from '../components';
 import {useData, useTheme, useTranslation} from '../hooks';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const isAndroid = Platform.OS === 'android';
 
@@ -30,6 +31,16 @@ const PhonePay = () => {
               Pay someone using an UPI verified phone number.
             </Text>
             <Input keyboardType='number-pad' maxLength={10} indPhoneNumber  placeholder="Phone Number" marginBottom={sizes.sm} />
+            <Block row  justify='space-around' paddingHorizontal={sizes.sm}>
+              <Button color={colors.primaryBlue} marginBottom={sizes.base} >
+                <Block row  justify='space-between' paddingHorizontal={sizes.sm} align='center'>
+                    <Text white bold transform="uppercase" >
+                      Verify
+                    </Text>
+                </Block>
+                
+            </Button>
+          </Block>
         </Block>
     </Block>
 </Block>
