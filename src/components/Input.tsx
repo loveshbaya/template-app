@@ -32,6 +32,7 @@ const Input = ({
   disabled,
   label,
   icon,
+  indPhoneNumber,
   marginBottom,
   marginTop,
   marginHorizontal,
@@ -99,7 +100,7 @@ const Input = ({
       minHeight: sizes.inputHeight,
       borderRadius: sizes.inputRadius,
       borderWidth: isFocused ? 2 : sizes.inputBorder,
-      borderColor: isFocused ? colors.focus : inputColor,
+      borderColor: isFocused ? colors.primaryBlue : inputColor,
     },
   ]) as ViewStyle;
 
@@ -130,6 +131,12 @@ const Input = ({
           <Image
             source={assets.search}
             style={{marginLeft: sizes.inputPadding, tintColor: colors.icon}}
+          />
+        )}
+        {indPhoneNumber && assets.indPhoneNumber && (
+          <Image 
+            source={assets.indPhoneNumber} 
+            style={{marginLeft: sizes.inputPadding, height:sizes.m, width:sizes.m}}
           />
         )}
         {icon && (

@@ -22,9 +22,10 @@ const Home = () => {
     [following, trending, setTab, setProducts],
   );
 
-  function navigateToScanner() {
+  function navigateTo(screen) {
     return function () {
-      navigation.navigate('QRScanner')
+      console.log("navigate to:",screen)
+      navigation.navigate(screen)
     };
   }
 
@@ -44,7 +45,7 @@ const Home = () => {
               width: sizes.socialSize,
               height: sizes.socialSize,
               borderRadius: sizes.socialRadius
-            }} onPress={navigateToScanner()}>
+            }} onPress={navigateTo('QRScanner')}>
           <Ionicons
               name="qr-code"
               size={sizes.socialIconSize}
@@ -56,7 +57,7 @@ const Home = () => {
           width: sizes.socialSize,
           height: sizes.socialSize,
           borderRadius: sizes.socialRadius
-        }}>
+        }} onPress={navigateTo('PhonePay')}>
           <AntDesign
               name="contacts"
               size={sizes.socialIconSize}
@@ -68,7 +69,7 @@ const Home = () => {
           width: sizes.socialSize,
           height: sizes.socialSize,
           borderRadius: sizes.socialRadius
-        }}>
+        }} onPress={navigateTo('UpiPay')}>
           <Image
               source={assets.upi}
               height={sizes.m}

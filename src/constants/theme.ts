@@ -35,6 +35,7 @@ export const ICONS: ThemeIcons = {
   apple: require('../assets/icons/apple.png'),
   google: require('../assets/icons/google.png'),
   upi: require('../assets/icons/upi-bhim-5.png'),
+  indPhoneNumber: require('../assets/icons/india-flag.png'),
   facebook: require('../assets/icons/facebook.png'),
   arrow: require('../assets/icons/arrow.png'),
   articles: require('../assets/icons/articles.png'),

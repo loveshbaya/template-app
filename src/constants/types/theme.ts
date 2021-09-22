@@ -103,6 +103,7 @@ export interface ThemeColors {
   twitter: ColorValue;
   dribbble: ColorValue;
   icon: ColorValue;
+  primaryBlue: ColorValue;
   blurTint: 'light' | 'dark' | 'default';
   link: ColorValue;
 }
@@ -238,6 +239,7 @@ export interface ThemeIcons {
   register: ImageSourcePropType;
   rental: ImageSourcePropType;
   search: ImageSourcePropType;
+  indPhoneNumber: ImageSourcePropType;
   settings: ImageSourcePropType;
   blank_template:ImageSourcePropType;
   star: ImageSourcePropType;

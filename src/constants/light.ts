@@ -20,6 +20,8 @@ export const COLORS: ThemeColors = {
   /** UI color for #tertiary */
   tertiary: '#E8AE4C',
 
+  primaryBlue: '#4285F4',
+
   // non-colors
   black: '#252F40',
   white: '#FFFFFF',
