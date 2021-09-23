@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 
-import {Block, Image, Text} from '../components/';
+import {Block, Image, Input, Text} from '../components/';
 import {useData, useTheme, useTranslation} from '../hooks/';
 import QRCode from "react-native-qrcode-svg";
 
@@ -17,6 +17,7 @@ const PrePayment = ({nav, route}) => {
     const buisness = "Timber"
     const contact = "9929496321"
     const email = "sumit@k2io.com"
+    const [amount, setAmount] = useState(0)
     var data;
     switch (route.params.type) {
         case 'UPI':
@@ -58,6 +59,17 @@ const PrePayment = ({nav, route}) => {
                     <Block card marginTop={sizes.sm} align={"center"} radius={1} color={'#ADD8E6'}>
                         <QRCode size={168} value={qrcode}>
                         </QRCode>
+                    </Block>
+                </Block>
+                <Block align={"center"}>
+                    <Block card marginTop={sizes.sm} width={256}>
+
+                        <Text h6 bold center marginBottom={sizes.s}>
+                            Enter Amount to Pay
+                        </Text>
+                        <Input inr id="upiId" placeholder={"0"} onChangeText={amount => setAmount(amount)}
+                               keyboardType='number-pad' marginBottom={sizes.sm}/>
+
                     </Block>
                 </Block>
             </Block>

@@ -602,6 +602,8 @@ export interface IInputProps extends TextInputProps, ISpacing {
    */
    indPhoneNumber?: boolean;
 
+  inr?: boolean;
+
   /**
    * Renders a disabled / non-editable TextInput
    * @see https://reactnative.dev/docs/textinput#editable

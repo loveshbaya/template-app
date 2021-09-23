@@ -1,11 +1,5 @@
 import * as React from 'react';
-import {
-  ColorValue,
-  FlexStyle,
-  ImageSourcePropType,
-  ScaledSize,
-  TextStyle,
-} from 'react-native';
+import {ColorValue, FlexStyle, ImageSourcePropType, ScaledSize, TextStyle,} from 'react-native';
 
 // Spacing types
 export interface ISpacing
@@ -240,6 +234,7 @@ export interface ThemeIcons {
   rental: ImageSourcePropType;
   search: ImageSourcePropType;
   indPhoneNumber: ImageSourcePropType;
+  inr: ImageSourcePropType;
   settings: ImageSourcePropType;
   blank_template:ImageSourcePropType;
   star: ImageSourcePropType;

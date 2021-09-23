@@ -1,12 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {
-  Image,
-  TextInput,
-  TextStyle,
-  ViewStyle,
-  StyleSheet,
-  Platform,
-} from 'react-native';
+import {Image, Platform, StyleSheet, TextInput, TextStyle, ViewStyle,} from 'react-native';
 
 import Block from './Block';
 import Text from './Text';
@@ -33,6 +26,7 @@ const Input = ({
   label,
   icon,
   indPhoneNumber,
+                 inr,
   marginBottom,
   marginTop,
   marginHorizontal,
@@ -104,12 +98,18 @@ const Input = ({
     },
   ]) as ViewStyle;
 
+  const inrContainerStyles = StyleSheet.flatten([
+    {
+      minHeight: sizes.inputHeight,
+    },
+  ]) as ViewStyle;
+
   const inputStyles = StyleSheet.flatten([
     {
       flex: 1,
       zIndex: 2,
       height: '100%',
-      fontSize: sizes.p,
+      fontSize: inr ? sizes.xl : sizes.p,
       color: colors.input,
       paddingHorizontal: sizes.inputPadding,
     },
@@ -126,7 +126,7 @@ const Input = ({
           {label}
         </Text>
       )}
-      <Block row align="center" justify="flex-end" style={inputContainerStyles}>
+      <Block row align="center" justify="flex-end" style={inr ? inrContainerStyles : inputContainerStyles}>
         {search && assets.search && (
           <Image
             source={assets.search}
@@ -134,10 +134,16 @@ const Input = ({
           />
         )}
         {indPhoneNumber && assets.indPhoneNumber && (
-          <Image 
-            source={assets.indPhoneNumber} 
+            <Image
+                source={assets.indPhoneNumber}
             style={{marginLeft: sizes.inputPadding, height:sizes.m, width:sizes.m}}
           />
+        )}
+        {inr && assets.inr && (
+            <Image
+                source={assets.inr}
+                style={{marginLeft: sizes.inputPadding, height: 33, width: 22}}
+            />
         )}
         {icon && (
           <Image

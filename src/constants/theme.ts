@@ -1,12 +1,5 @@
 import {Dimensions, Platform} from 'react-native';
-import {
-  ICommonTheme,
-  ThemeAssets,
-  ThemeFonts,
-  ThemeIcons,
-  ThemeLineHeights,
-  ThemeWeights,
-} from './types';
+import {ICommonTheme, ThemeAssets, ThemeFonts, ThemeIcons, ThemeLineHeights, ThemeWeights,} from './types';
 
 const {width, height} = Dimensions.get('window');
 
@@ -36,6 +29,7 @@ export const ICONS: ThemeIcons = {
   google: require('../assets/icons/google.png'),
   upi: require('../assets/icons/upi-bhim-5.png'),
   indPhoneNumber: require('../assets/icons/india-flag.png'),
+  inr: require('../assets/icons/inr.png'),
   facebook: require('../assets/icons/facebook.png'),
   arrow: require('../assets/icons/arrow.png'),
   articles: require('../assets/icons/articles.png'),
