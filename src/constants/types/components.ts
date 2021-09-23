@@ -601,7 +601,7 @@ export interface IInputProps extends TextInputProps, ISpacing {
    * Renders a india flag icon
    */
    indPhoneNumber?: boolean;
-  
+
   /**
    * Renders a disabled / non-editable TextInput
    * @see https://reactnative.dev/docs/textinput#editable

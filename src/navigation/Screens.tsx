@@ -1,7 +1,20 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {Articles, Components, Home, Profile, Register, Pro, QRScanner,BlankTemplate, QRInfo, PhonePay, UpiPay} from '../screens';
+import {
+    Articles,
+    BlankTemplate,
+    Components,
+    Home,
+    PhonePay,
+    PrePayment,
+    Pro,
+    Profile,
+    QRInfo,
+    QRScanner,
+    Register,
+    UpiPay
+} from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
 const Stack = createStackNavigator();
@@ -61,7 +74,7 @@ export default () => {
           component={QRInfo}
           options={{headerShown: false}}
       />
-    
+
     <Stack.Screen
           name="PhonePay"
           component={PhonePay}
@@ -73,6 +86,13 @@ export default () => {
           component={UpiPay}
           options={{headerShown: false}}
       />
+        <Stack.Screen
+            name="PrePayment"
+            component={PrePayment}
+            options={{headerShown: false}}
+        />
     </Stack.Navigator>
+
+
   );
 };

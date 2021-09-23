@@ -1,9 +1,8 @@
 import React, {useCallback, useState} from 'react';
 
 import {useData, useTheme, useTranslation} from '../hooks/';
-import {Block, Button, Image, Input, Product, Text} from '../components/';
-import {Ionicons, AntDesign, FontAwesome} from "@expo/vector-icons";
-import {TouchableOpacity} from "react-native";
+import {Block, Button, Image} from '../components/';
+import {AntDesign, Ionicons} from "@expo/vector-icons";
 import {useNavigation} from "@react-navigation/core";
 
 const Home = () => {
@@ -22,13 +21,6 @@ const Home = () => {
     [following, trending, setTab, setProducts],
   );
 
-  function navigateTo(screen) {
-    return function () {
-      console.log("navigate to:",screen)
-      navigation.navigate(screen)
-    };
-  }
-
   return (
     <Block>
 
@@ -45,7 +37,7 @@ const Home = () => {
               width: sizes.socialSize,
               height: sizes.socialSize,
               borderRadius: sizes.socialRadius
-            }} onPress={navigateTo('QRScanner')}>
+        }} onPress={() => navigation.navigate('QRScanner')}>
           <Ionicons
               name="qr-code"
               size={sizes.socialIconSize}
@@ -57,7 +49,7 @@ const Home = () => {
           width: sizes.socialSize,
           height: sizes.socialSize,
           borderRadius: sizes.socialRadius
-        }} onPress={navigateTo('PhonePay')}>
+        }} onPress={() => navigation.navigate('PhonePay')}>
           <AntDesign
               name="contacts"
               size={sizes.socialIconSize}
@@ -69,7 +61,7 @@ const Home = () => {
           width: sizes.socialSize,
           height: sizes.socialSize,
           borderRadius: sizes.socialRadius
-        }} onPress={navigateTo('UpiPay')}>
+        }} onPress={() => navigation.navigate('UpiPay')}>
           <Image
               source={assets.upi}
               height={sizes.m}

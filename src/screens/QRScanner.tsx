@@ -1,18 +1,17 @@
-import { StackScreenProps } from '@react-navigation/stack';
+import {StackScreenProps} from '@react-navigation/stack';
 import * as BarCodeScanner from 'expo-barcode-scanner';
-import { BlurView } from 'expo-blur';
-import { throttle } from 'lodash';
-import React, {useState} from 'react';
-import { Block, Button, Image, Input, Product, Text } from "../components";
-import { Linking, Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Camera } from 'expo-camera';
-import { useData, useTheme, useTranslation } from "../hooks";
-import { AllStackRoutes } from '../navigation/Navigation.types';
+import {BlurView} from 'expo-blur';
+import {throttle} from 'lodash';
+import React from 'react';
+import {Block, Text} from "../components";
+import {Linking, Platform, StatusBar, StyleSheet, View} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {Camera} from 'expo-camera';
+import {useData, useTheme} from "../hooks";
+import {AllStackRoutes} from '../navigation/Navigation.types';
 import QRFooterButton from "../components/QRFooterButton";
 import QRIndicator from "../components/QRIndicator";
 import {useNavigation} from '@react-navigation/core';
-import { NavigationHelpersContext } from '@react-navigation/native';
 
 type State = {
     isVisible: boolean;
@@ -67,7 +66,8 @@ export default function BarCodeScreen(
         data.handleQrCode ( url)
         console.log("url datas in qr scanner "+ JSON.stringify(data.getQrCodes()) + "URL  : ", JSON.stringify(url))
         // setState({ isVisible: false, url });
-        navigation.navigate('QRInfo',{url: url, qrcode: data.getQrCodes()})
+        // navigation.navigate('QRInfo',{url: url, qrcode: data.getQrCodes()})
+        navigation.navigate('PrePayment', {url: url, type: 'QRScan'})
     }, 1000);
 
     const openUrl = (url: string) => {
