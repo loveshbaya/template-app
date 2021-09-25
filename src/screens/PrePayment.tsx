@@ -33,6 +33,10 @@ const PrePayment = ({nav, route}) => {
             break;
     }
 
+    function methoddd() {
+        return (() => alert("touched"));
+    }
+
     console.log("Data from : ", route.params.type, " is ", data);
     var qrcode = data + "@" + merchantName + "@" + buisness + "@" + contact + "@" + email;
     return (
@@ -70,7 +74,8 @@ const PrePayment = ({nav, route}) => {
                             Enter Amount to Pay
                         </Text>
                         <Block justify={"space-evenly"}>
-                            <Input inr id="upiId" placeholder={"0"} onChangeText={amount => setAmount(amount)}
+                            <Input inr id="upiId" placeholder={"0"} onIconTouchStart={() => alert("touched")}
+                                   onChangeText={amount => setAmount(amount)}
                                    keyboardType='number-pad' marginBottom={sizes.sm}/>
                         </Block>
                     </Block>

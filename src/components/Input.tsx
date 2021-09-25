@@ -29,7 +29,8 @@ const Input = ({
   label,
   icon,
   indPhoneNumber,
-                 inr,
+                   inr,
+                   onIconTouchStart,
   marginBottom,
   marginTop,
   marginHorizontal,
@@ -164,7 +165,7 @@ const Input = ({
           onBlur={(event) => handleFocus(event, false)}
         />
         {inr && (
-            <View onTouchStart={() => alert("touched")}>
+            <View onTouchStart={onIconTouchStart}>
               <FontAwesomeIcon icon={faAngleDoubleRight} size={42}></FontAwesomeIcon>
             </View>)
         }

@@ -604,6 +604,8 @@ export interface IInputProps extends TextInputProps, ISpacing {
 
   inr?: boolean;
 
+  onIconTouchStart?: object;
+
   /**
    * Renders a disabled / non-editable TextInput
    * @see https://reactnative.dev/docs/textinput#editable
