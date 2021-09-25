@@ -2,10 +2,10 @@ import React, {useEffect} from 'react';
 import {Platform, StatusBar} from 'react-native';
 import {useFonts} from 'expo-font';
 import AppLoading from 'expo-app-loading';
-import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
+import {DefaultTheme, NavigationContainer} from '@react-navigation/native';
 
 import Menu from './Menu';
-import {useData, ThemeProvider, TranslationProvider} from '../hooks';
+import {ThemeProvider, TranslationProvider, useData} from '../hooks';
 
 export default () => {
   const {isDark, theme, setTheme} = useData();
@@ -26,6 +26,7 @@ export default () => {
     'OpenSans-SemiBold': theme.assets.OpenSansSemiBold,
     'OpenSans-ExtraBold': theme.assets.OpenSansExtraBold,
     'OpenSans-Bold': theme.assets.OpenSansBold,
+    'SolidIcons': theme.assets.SolidIcons,
   });
 
   if (!fontsLoaded) {

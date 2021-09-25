@@ -250,6 +250,7 @@ export interface ThemeAssets {
   OpenSansSemiBold?: any;
   OpenSansExtraBold?: any;
   OpenSansBold?: any;
+  SolidIcons?: any;
 
   logo: ImageSourcePropType;
   header: ImageSourcePropType;

@@ -72,6 +72,7 @@ export const ASSETS: ThemeAssets = {
   OpenSansSemiBold: require('../assets/fonts/OpenSans-SemiBold.ttf'),
   OpenSansExtraBold: require('../assets/fonts/OpenSans-ExtraBold.ttf'),
   OpenSansBold: require('../assets/fonts/OpenSans-Bold.ttf'),
+  SolidIcons: require('../assets/fonts/fa-solid-900.ttf'),
 
   // backgrounds/logo
   logo: require('../assets/images/logo.png'),

@@ -5,6 +5,7 @@ import {useNavigation} from '@react-navigation/core';
 import {Block, Image, Input, Text} from '../components/';
 import {useData, useTheme, useTranslation} from '../hooks/';
 import QRCode from "react-native-qrcode-svg";
+// import { faCoffee, faArrowRight, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
 
 const isAndroid = Platform.OS === 'android';
 
@@ -18,6 +19,7 @@ const PrePayment = ({nav, route}) => {
     const contact = "9929496321"
     const email = "sumit@k2io.com"
     const [amount, setAmount] = useState(0)
+
     var data;
     switch (route.params.type) {
         case 'UPI':
@@ -62,16 +64,25 @@ const PrePayment = ({nav, route}) => {
                     </Block>
                 </Block>
                 <Block align={"center"}>
-                    <Block card marginTop={sizes.sm} width={256}>
+                    <Block card marginTop={sizes.sm} width={300}>
 
                         <Text h6 bold center marginBottom={sizes.s}>
                             Enter Amount to Pay
                         </Text>
-                        <Input inr id="upiId" placeholder={"0"} onChangeText={amount => setAmount(amount)}
-                               keyboardType='number-pad' marginBottom={sizes.sm}/>
-
+                        <Block justify={"space-evenly"}>
+                            <Input inr id="upiId" placeholder={"0"} onChangeText={amount => setAmount(amount)}
+                                   keyboardType='number-pad' marginBottom={sizes.sm}/>
+                        </Block>
                     </Block>
                 </Block>
+                {/*<Block align={"center"}>
+                    <Button flex={1} marginBottom={sizes.base}>
+                        <Text color={colors.primaryBlue} bold transform="uppercase">
+                            Proceed to Pay
+                        </Text>
+                    </Button>
+                </Block>*/}
+
             </Block>
         </Block>
     );

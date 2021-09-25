@@ -5,7 +5,6 @@ import {throttle} from 'lodash';
 import React from 'react';
 import {Block, Text} from "../components";
 import {Linking, Platform, StatusBar, StyleSheet, View} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {Camera} from 'expo-camera';
 import {useData, useTheme} from "../hooks";
 import {AllStackRoutes} from '../navigation/Navigation.types';
@@ -101,8 +100,6 @@ export default function BarCodeScreen(
         setLit((isLit) => !isLit);
     }, []);
 
-    const { top, bottom } = useSafeAreaInsets();
-
     return (
         <Block safe marginTop={sizes.s}>
             <View style={styles.container}>
@@ -123,7 +120,7 @@ export default function BarCodeScreen(
 
                 <QRIndicator />
 
-                <View style={[styles.footer, { bottom: 30 + bottom }]}>
+                <View style={[styles.footer, {bottom: 30}]}>
                     <QRFooterButton onPress={onFlashToggle} isActive={isLit} iconName="ios-flashlight" />
                     <QRFooterButton onPress={onCancel} iconName="ios-close" iconSize={48} />
                 </View>

@@ -1,11 +1,14 @@
 import React, {useCallback, useState} from 'react';
-import {Image, Platform, StyleSheet, TextInput, TextStyle, ViewStyle,} from 'react-native';
+import {Image, Platform, StyleSheet, TextInput, TextStyle, View, ViewStyle,} from 'react-native';
 
 import Block from './Block';
 import Text from './Text';
 
 import useTheme from '../hooks/useTheme';
 import {IInputProps} from '../constants/types';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome'
+import {faAngleDoubleRight} from '@fortawesome/free-solid-svg-icons'
+// import { faArrowAltCircleRight } from '@fortawesome/free-regular-svg-icons'
 
 const Input = ({
   id = 'Input',
@@ -160,6 +163,11 @@ const Input = ({
           onFocus={(event) => handleFocus(event, true)}
           onBlur={(event) => handleFocus(event, false)}
         />
+        {inr && (
+            <View onTouchStart={() => alert("touched")}>
+              <FontAwesomeIcon icon={faAngleDoubleRight} size={42}></FontAwesomeIcon>
+            </View>)
+        }
         {danger && assets.warning && (
           <Image
             source={assets.warning}
