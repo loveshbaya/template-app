@@ -15,10 +15,18 @@ const PrePayment = ({nav, route}) => {
     const {assets, colors, sizes} = useTheme();
     const {user} = useData();
     const merchantName = "Sumit Suthar"
-    const buisness = "Timber"
+    const business = "Timber"
     const contact = "9929496321"
     const email = "sumit@k2io.com"
     const [amount, setAmount] = useState(0)
+    
+    let paymentDetails = {}
+    paymentDetails.merchantName = merchantName;
+    paymentDetails.business = business;
+    paymentDetails.contact = contact;
+    paymentDetails.email = email;
+    paymentDetails.amount = amount;
+
 
     var data;
     switch (route.params.type) {
@@ -38,7 +46,7 @@ const PrePayment = ({nav, route}) => {
     }
 
     console.log("Data from : ", route.params.type, " is ", data);
-    var qrcode = data + "@" + merchantName + "@" + buisness + "@" + contact + "@" + email;
+    var qrcode = data + "@" + merchantName + "@" + business + "@" + contact + "@" + email;
     return (
         <Block safe marginTop={sizes.md} marginBottom={sizes.md} paddingHorizontal={sizes.padding}>
             <Block scroll showsVerticalScrollIndicator={true}>
@@ -74,7 +82,7 @@ const PrePayment = ({nav, route}) => {
                             Enter Amount to Pay
                         </Text>
                         <Block justify={"space-evenly"}>
-                            <Input inr id="upiId" placeholder={"0"} onIconTouchStart={() => alert("touched")}
+                            <Input inr id="upiId" placeholder={"0"} onIconTouchStart={() => navigation.navigate('PaymentOptions',{paymentDetails})}
                                    onChangeText={amount => setAmount(amount)}
                                    keyboardType='number-pad' marginBottom={sizes.sm}/>
                         </Block>

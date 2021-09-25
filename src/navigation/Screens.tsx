@@ -13,7 +13,8 @@ import {
     QRInfo,
     QRScanner,
     Register,
-    UpiPay
+    UpiPay,
+    PaymentOptions
 } from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
@@ -89,6 +90,11 @@ export default () => {
         <Stack.Screen
             name="PrePayment"
             component={PrePayment}
+            options={{headerShown: false}}
+        />
+        <Stack.Screen
+            name="PaymentOptions"
+            component={PaymentOptions}
             options={{headerShown: false}}
         />
     </Stack.Navigator>
