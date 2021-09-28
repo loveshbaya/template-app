@@ -273,6 +273,11 @@ export interface ThemeAssets {
   avatar1: ImageSourcePropType;
   avatar2: ImageSourcePropType;
 
+    gpay: ImageSourcePropType;
+    phonepe: ImageSourcePropType;
+    bhim: ImageSourcePropType;
+    paytm: ImageSourcePropType
+
   x5: ImageSourcePropType;
   gle: ImageSourcePropType;
   tesla: ImageSourcePropType;

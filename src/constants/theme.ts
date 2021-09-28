@@ -101,6 +101,11 @@ export const ASSETS: ThemeAssets = {
   avatar1: require('../assets/images/avatar1.png'),
   avatar2: require('../assets/images/avatar2.png'),
 
+  gpay: require('../assets/images/gpay.png'),
+  phonepe: require('../assets/images/phonepe.png'),
+  paytm: require('../assets/images/paytm.png'),
+  bhim: require('../assets/images/bhim.png'),
+
   // cars
   x5: require('../assets/images/x5.png'),
   gle: require('../assets/images/gle.png'),
