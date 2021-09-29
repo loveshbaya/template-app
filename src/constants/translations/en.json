@@ -49,8 +49,8 @@
     }
   },
   "app": {
-    "name": "Soft UI",
-    "fullname": "Soft UI Kit",
+    "name": "PayMe",
+    "fullname": "PayMe Kit",
     "native": "React Native",
     "link": "creative-tim.com"
   },
@@ -69,10 +69,10 @@
     "qrscanner": "QR Scanner"
   },
   "navigation": {
-    "home": "Soft UI",
+    "home": "PayMe",
     "components": "Components",
-    "articles": "Soft UI",
-    "rentals": "Soft UI",
+    "articles": "PayMe",
+    "rentals": "PayMe",
     "rental": "Best Deal",
     "booking": "Booking",
     "chat": "Chat",
@@ -94,7 +94,7 @@
     "documentation": "Documentation"
   },
   "home": {
-    "title": "Soft UI",
+    "title": "PayMe",
     "following": "Following",
     "trending": "Trending"
   },
@@ -110,13 +110,13 @@
     "aboutMe": "About me"
   },
   "pro": {
-    "title": "Soft UI PRO",
+    "title": "PayMe PRO",
     "alert": "This feature is available in PRO version",
     "components": "• {{count} Components (Buttons, Inputs, Cards, etc)",
     "screens": "• {{count} Screens (Shopping, Notifications, Chat, etc)",
     "support": "• Premium Support included",
     "takeAdvantage": "Take advantage of all the features and screens coded on React Native for both",
-    "appTemplate": "Soft UI PRO React Native is an innovative app template that will help you built stunning mobile applications in no time. It features a huge number of components and screens built to fit together and look amazing:",
+    "appTemplate": "PayMe PRO React Native is an innovative app template that will help you built stunning mobile applications in no time. It features a huge number of components and screens built to fit together and look amazing:",
     "saveTime": "This modern app template will save you a lot of time going from prototyping to full-functional code, because all elements are implemented. We wanted the design process to be seamless, so switching from image to the real page is very easy to do!",
     "buyNow": "Buy now"
   }

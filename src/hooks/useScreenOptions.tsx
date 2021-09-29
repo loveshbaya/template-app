@@ -1,9 +1,6 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
-import {
-  StackHeaderTitleProps,
-  CardStyleInterpolators,
-} from '@react-navigation/stack';
+import {CardStyleInterpolators, StackHeaderTitleProps,} from '@react-navigation/stack';
 import {useNavigation} from '@react-navigation/core';
 import {DrawerActions} from '@react-navigation/native';
 import {StackHeaderOptions} from '@react-navigation/stack/lib/typescript/src/types';
@@ -16,6 +13,8 @@ import Text from '../components/Text';
 import useTheme from '../hooks/useTheme';
 import Button from '../components/Button';
 import Block from '../components/Block';
+import {faBell, faUser} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 
 export default () => {
   const {t} = useTranslation();
@@ -47,7 +46,7 @@ export default () => {
               screen: 'Pro',
             })
           }>
-          <Image source={icons.bell} radius={0} color={colors.icon} />
+            <FontAwesomeIcon icon={faBell} size={24} color={colors.icon}></FontAwesomeIcon>
           <Block
             flex={0}
             right={0}
@@ -61,25 +60,10 @@ export default () => {
         <TouchableOpacity
           onPress={() =>
             navigation.navigate('Screens', {
-              screen: 'Pro',
+                screen: 'UserProfile',
             })
           }>
-          <Image source={icons.basket} radius={0} color={colors.icon} />
-          <Block
-            flex={0}
-            padding={0}
-            justify="center"
-            position="absolute"
-            top={-sizes.s}
-            right={-sizes.s}
-            width={sizes.sm}
-            height={sizes.sm}
-            radius={sizes.sm / 2}
-            gradient={gradients?.primary}>
-            <Text white center bold size={10} lineHeight={10} paddingTop={3}>
-              3
-            </Text>
-          </Block>
+            <FontAwesomeIcon icon={faUser} size={24} color={colors.icon}></FontAwesomeIcon>
         </TouchableOpacity>
       </Block>
     ),

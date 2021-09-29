@@ -6,6 +6,7 @@ import {
     BlankTemplate,
     Components,
     Home,
+    PaymentOptions,
     PhonePay,
     PrePayment,
     Pro,
@@ -14,7 +15,7 @@ import {
     QRScanner,
     Register,
     UpiPay,
-    PaymentOptions
+    UserProfile
 } from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
@@ -93,12 +94,15 @@ export default () => {
             options={{headerShown: false}}
         />
         <Stack.Screen
+            name="UserProfile"
+            component={UserProfile}
+            options={{headerShown: false}}
+        />
+        <Stack.Screen
             name="PaymentOptions"
             component={PaymentOptions}
             options={{headerShown: false}}
         />
     </Stack.Navigator>
-
-
   );
 };
