@@ -25,3 +25,4 @@ export {default as UpiPay} from './UpiPay';
 export {default as PrePayment} from './PrePayment'
 export {default as PaymentOptions} from './PaymentOptions'
 export {default as UserProfile} from './UserProfile'
+export {default as CashBack} from './CashBack'

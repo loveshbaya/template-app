@@ -15,7 +15,8 @@ import {
     QRScanner,
     Register,
     UpiPay,
-    UserProfile
+    UserProfile,
+    CashBack
 } from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
@@ -101,6 +102,11 @@ export default () => {
         <Stack.Screen
             name="PaymentOptions"
             component={PaymentOptions}
+            options={{headerShown: false}}
+        />
+        <Stack.Screen
+            name="CashBack"
+            component={CashBack}
             options={{headerShown: false}}
         />
     </Stack.Navigator>
