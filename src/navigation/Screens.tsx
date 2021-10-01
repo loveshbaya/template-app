@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {
     Articles,
     BlankTemplate,
+    CashBack,
     Components,
     Home,
     PaymentOptions,
@@ -15,8 +16,7 @@ import {
     QRScanner,
     Register,
     UpiPay,
-    UserProfile,
-    CashBack
+    UserProfile
 } from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
@@ -97,7 +97,7 @@ export default () => {
         <Stack.Screen
             name="UserProfile"
             component={UserProfile}
-            options={{headerShown: false}}
+            options={screenOptions.userProfile}
         />
         <Stack.Screen
             name="PaymentOptions"
@@ -107,7 +107,7 @@ export default () => {
         <Stack.Screen
             name="CashBack"
             component={CashBack}
-            options={{headerShown: false}}
+            options={screenOptions.back}
         />
     </Stack.Navigator>
   );

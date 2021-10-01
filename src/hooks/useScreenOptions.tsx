@@ -118,6 +118,27 @@ export default () => {
         </Button>
       ),
     },
+      userProfile: {
+          ...menu,
+          headerRight: () => null,
+          headerTitle: () => (
+              <Text p black>
+                  {t('navigation.userprofile')}
+              </Text>
+          ),
+          headerLeft: () => (
+              <Button onPress={() => navigation.goBack()}>
+                  <Image
+                      radius={0}
+                      width={10}
+                      height={18}
+                      color={colors.icon}
+                      source={icons.arrow}
+                      transform={[{rotate: '180deg'}]}
+                  />
+              </Button>
+          ),
+      },
     profile: {
       ...menu,
       headerRight: () => (

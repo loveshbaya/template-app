@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform} from 'react-native';
+import {Platform, Vibration} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 
 import {Block, Image, Separator, Text} from '../components/';
@@ -16,14 +16,14 @@ const UserProfile = () => {
     const {assets, colors, sizes, fonts, weights} = useTheme();
     console.log("On User profile")
     return (
-        <Block safe marginTop={sizes.md}>
+        <Block safe>
             <Block
                 scroll
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={{paddingVertical: sizes.padding}}>
                 <Block card radius={1}>
                     <Block row marginBottom={sizes.m}>
-                        <Block marginTop={sizes.s} marginLeft={sizes.md} padding={sizes.s} justify="space-between">
+                        <Block marginLeft={sizes.md} padding={sizes.s} justify="space-between">
                             <Text font={fonts.thin} size={sizes.h4} weight={weights.p} h4>
                                 Lovesh Baya
                             </Text>
@@ -59,7 +59,11 @@ const UserProfile = () => {
                     </Block>
 
                     <Separator borderWidth={2}></Separator>
-                    <Block marginLeft={sizes.s} row marginTop={sizes.sm} marginBottom={sizes.sm}>
+                    <Block marginLeft={sizes.s} onTouchStart={() => {
+                        Vibration.vibrate(50);
+                        navigation.navigate('CashBack')
+                    }
+                    } row marginTop={sizes.sm} marginBottom={sizes.sm}>
                         <FontAwesomeIcon icon={faCoins} color={colors.primaryBlue} size={24}></FontAwesomeIcon>
                         <Block row justify='space-between'>
                             <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
