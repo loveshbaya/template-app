@@ -1,19 +1,19 @@
 import * as React from 'react';
 import {
-  Animated,
-  ColorValue,
-  ImageProps,
-  ImageStyle,
-  KeyboardAvoidingViewProps,
-  ModalProps,
-  ScrollViewProps,
-  StyleProp,
-  TextInputProps,
-  TextProps,
-  TextStyle,
-  TouchableOpacityProps,
-  ViewProps,
-  ViewStyle,
+    Animated,
+    ColorValue,
+    ImageProps,
+    ImageStyle,
+    KeyboardAvoidingViewProps,
+    ModalProps,
+    ScrollViewProps,
+    StyleProp,
+    TextInputProps,
+    TextProps,
+    TextStyle,
+    TouchableOpacityProps,
+    ViewProps,
+    ViewStyle,
 } from 'react-native';
 import {BlurProps} from 'expo-blur';
 import {LinearGradientPoint} from 'expo-linear-gradient';
@@ -430,6 +430,14 @@ export interface IButtonProps extends TouchableOpacityProps, ISpacing {
    * Renders Button content
    */
   children?: React.ReactNode;
+}
+
+export interface ISeparatorProps extends IBlockProps {
+    /**
+     * Renders a custom width value
+     * @see https://reactnative.dev/docs/layout-props#width
+     */
+    borderWidth?: ViewStyle['width'];
 }
 
 /**

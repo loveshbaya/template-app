@@ -2,8 +2,10 @@ import React from 'react';
 import {Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 
-import {Block, Text,Image} from '../components/';
+import {Block, Image, Separator, Text} from '../components/';
 import {useData, useTheme, useTranslation} from '../hooks/';
+import {faCoins, faWallet} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 
 const isAndroid = Platform.OS === 'android';
 
@@ -19,10 +21,10 @@ const UserProfile = () => {
                 scroll
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={{paddingVertical: sizes.padding}}>
-                <Block row >
-                    <Block card radius={1}>
-                        <Block padding={sizes.s} justify="space-between">
-                            <Text font={fonts.p} size={sizes.h5} weight={weights.p} h4>
+                <Block card radius={1}>
+                    <Block row marginBottom={sizes.m}>
+                        <Block marginTop={sizes.s} marginLeft={sizes.md} padding={sizes.s} justify="space-between">
+                            <Text font={fonts.thin} size={sizes.h4} weight={weights.p} h4>
                                 Lovesh Baya
                             </Text>
                             <Text p>
@@ -32,35 +34,45 @@ const UserProfile = () => {
                                 lovesh.baya
                             </Text>
                         </Block>
+
+                        <Block align='flex-end'>
+                            <Block padding={sizes.s} justify="center" marginRight={sizes.m}>
+                                <Image
+                                    width={70}
+                                    height={70}
+                                    source={{uri: user?.avatar}}
+                                    radius={100}
+                                />
+                            </Block>
+                        </Block>
+                    </Block>
+                    <Block marginLeft={sizes.s} row marginTop={sizes.sm} marginBottom={sizes.sm}>
+                        <FontAwesomeIcon icon={faWallet} color={colors.primaryBlue} size={24}></FontAwesomeIcon>
+                        <Block row justify='space-between'>
+                            <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
+                                Wallet Balance
+                            </Text>
+                            <Text p size={sizes.h5} weight={weights.p} font={fonts.extrabold} h5 marginRight={sizes.m}>
+                                INR 15
+                            </Text>
+                        </Block>
                     </Block>
 
-                <Block card radius={1} align='center' >
-                    <Block padding={sizes.s} justify="center">
-                            <Image
-                                width={70}
-                                height={70}
-                                source={{uri: user?.avatar}}
-                                radius={100}
-                            />
+                    <Separator borderWidth={2}></Separator>
+                    <Block marginLeft={sizes.s} row marginTop={sizes.sm} marginBottom={sizes.sm}>
+                        <FontAwesomeIcon icon={faCoins} color={colors.primaryBlue} size={24}></FontAwesomeIcon>
+                        <Block row justify='space-between'>
+                            <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
+                                CashBack Earned
+                            </Text>
+                            <Text p color={colors.primaryBlue} size={sizes.h5} weight={weights.p} h5
+                                  marginRight={sizes.m}>
+                                386
+                            </Text>
                         </Block>
+                    </Block>
                 </Block>
-            </Block>
 
-            <Block card row marginTop={sizes.m} justify='space-between'>
-                    <Text p font={fonts.p} size={sizes.h5} weight={weights.p} h4>
-                                Wallet Balance
-                    </Text>
-                    <Text p font={fonts.p} size={sizes.h6} weight={weights.p} h5 marginRight={sizes.m}>
-                               15 INR
-                    </Text>
-            </Block>
-
-            <Block card row marginTop={sizes.m} justify='space-between'>
-                    <Text p font={fonts.p} size={sizes.h5} weight={weights.p} h4>
-                                CashBack History
-                    </Text>
-                    
-            </Block>     
         </Block>
     </Block>
     );

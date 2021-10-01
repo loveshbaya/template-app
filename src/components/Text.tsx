@@ -202,7 +202,8 @@ const Typography = (props: ITextProps) => {
   }
 
   return (
-    <Text {...textID} {...rest} style={textStyles}>
+
+      <Text {...textID} {...rest} style={textStyles}>
       {children}
     </Text>
   );

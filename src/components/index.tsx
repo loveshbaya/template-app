@@ -5,6 +5,7 @@ import Text from './Text';
 import Modal from './Modal';
 import Switch from './Switch';
 import Checkbox from './Checkbox';
+import Separator from "./Separator";
 import Image from './Image';
 import Article from './Article';
 import Product from './Product';
@@ -20,4 +21,5 @@ export {
   Article,
   Product,
   Modal,
+  Separator,
 };

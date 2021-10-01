@@ -166,7 +166,7 @@ const Input = ({
         />
         {inr && (
             <View onTouchStart={onIconTouchStart}>
-              <FontAwesomeIcon icon={faAngleDoubleRight} size={42}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faAngleDoubleRight} color={colors.primaryBlue} size={42}></FontAwesomeIcon>
             </View>)
         }
         {danger && assets.warning && (
