@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/core';
 
 import {Block, Image, Separator, Text} from '../components/';
 import {useData, useTheme, useTranslation} from '../hooks/';
-import {faCoins, faWallet} from "@fortawesome/free-solid-svg-icons";
+import {faCheckCircle, faCoins, faExclamationTriangle, faHistory, faWallet} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 
 const isAndroid = Platform.OS === 'android';
@@ -53,7 +53,7 @@ const UserProfile = () => {
                                 Wallet Balance
                             </Text>
                             <Text p size={sizes.h5} weight={weights.p} font={fonts.extrabold} h5 marginRight={sizes.m}>
-                                INR 15
+                                &#x20B9;15
                             </Text>
                         </Block>
                     </Block>
@@ -71,6 +71,215 @@ const UserProfile = () => {
                             </Text>
                         </Block>
                     </Block>
+                </Block>
+
+                <Block card radius={1} marginTop={sizes.sm} marginBottom={sizes.sm}>
+                    <Block row justify='space-between' marginBottom={sizes.s} marginRight={sizes.sm}>
+                        <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
+                            Transaction History
+                        </Text>
+                        <FontAwesomeIcon icon={faHistory} color={colors.primaryBlue} size={24}></FontAwesomeIcon>
+                    </Block>
+                    <Separator borderWidth={2}></Separator>
+                    <Block row marginTop={sizes.sm} marginBottom={sizes.s} marginLeft={sizes.s} marginRight={sizes.sm}>
+                        <FontAwesomeIcon icon={faCheckCircle} style={{marginTop: '2%'}} color={colors.success}
+                                         size={26}></FontAwesomeIcon>
+                        <Block row justify='space-between'>
+                            <Block>
+                                <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
+                                    Sumit Suthar
+                                </Text>
+                                <Text p marginLeft={sizes.sm} size={12} font={fonts.thin} weight={weights.p} h4>
+                                    18 Sept 2021
+                                </Text>
+                            </Block>
+                            <Text p marginLeft={sizes.sm} font={fonts.p} marginTop={10} weight={weights.p} h4>
+                                + &#x20B9;1500
+                            </Text>
+                        </Block>
+                    </Block>
+                    <Separator borderWidth={1}></Separator>
+                    <Block row marginTop={sizes.sm} marginBottom={sizes.s} marginLeft={sizes.s} marginRight={sizes.sm}>
+                        <FontAwesomeIcon icon={faExclamationTriangle} style={{marginTop: '2%'}} color={colors.danger}
+                                         size={26}></FontAwesomeIcon>
+                        <Block row justify='space-between'>
+                            <Block>
+                                <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
+                                    Sumit Suthar
+                                </Text>
+                                <Text p marginLeft={sizes.sm} size={12} font={fonts.thin} weight={weights.p} h4>
+                                    18 Sept 2021
+                                </Text>
+                            </Block>
+                            <Text p marginLeft={sizes.sm} font={fonts.p} marginTop={10} weight={weights.p} h4>
+                                &#x20B9;1500
+                            </Text>
+                        </Block>
+                    </Block>
+                    <Separator borderWidth={1}></Separator>
+                    <Block row marginTop={sizes.sm} marginBottom={sizes.s} marginLeft={sizes.s} marginRight={sizes.sm}>
+                        <FontAwesomeIcon icon={faCheckCircle} style={{marginTop: '2%'}} color={colors.success}
+                                         size={26}></FontAwesomeIcon>
+                        <Block row justify='space-between'>
+                            <Block>
+                                <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
+                                    Lorem Epsum
+                                </Text>
+                                <Text p marginLeft={sizes.sm} size={12} font={fonts.thin} weight={weights.p} h4>
+                                    18 Sept 2021
+                                </Text>
+                            </Block>
+                            <Text p marginLeft={sizes.sm} font={fonts.p} marginTop={10} weight={weights.p} h4>
+                                - &#x20B9;1500
+                            </Text>
+                        </Block>
+                    </Block>
+                    <Separator borderWidth={1}></Separator>
+                    <Block row marginTop={sizes.sm} marginBottom={sizes.s} marginLeft={sizes.s} marginRight={sizes.sm}>
+                        <FontAwesomeIcon icon={faCheckCircle} style={{marginTop: '2%'}} color={colors.success}
+                                         size={26}></FontAwesomeIcon>
+                        <Block row justify='space-between'>
+                            <Block>
+                                <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
+                                    Lorem Epsum
+                                </Text>
+                                <Text p marginLeft={sizes.sm} size={12} font={fonts.thin} weight={weights.p} h4>
+                                    18 Sept 2021
+                                </Text>
+                            </Block>
+                            <Text p marginLeft={sizes.sm} font={fonts.p} marginTop={10} weight={weights.p} h4>
+                                - &#x20B9;1500
+                            </Text>
+                        </Block>
+                    </Block>
+                    <Separator borderWidth={1}></Separator>
+                    <Block row marginTop={sizes.sm} marginBottom={sizes.s} marginLeft={sizes.s} marginRight={sizes.sm}>
+                        <FontAwesomeIcon icon={faCheckCircle} style={{marginTop: '2%'}} color={colors.success}
+                                         size={26}></FontAwesomeIcon>
+                        <Block row justify='space-between'>
+                            <Block>
+                                <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
+                                    Lorem Epsum
+                                </Text>
+                                <Text p marginLeft={sizes.sm} size={12} font={fonts.thin} weight={weights.p} h4>
+                                    18 Sept 2021
+                                </Text>
+                            </Block>
+                            <Text p marginLeft={sizes.sm} font={fonts.p} marginTop={10} weight={weights.p} h4>
+                                - &#x20B9;1500
+                            </Text>
+                        </Block>
+                    </Block>
+                    <Separator borderWidth={1}></Separator>
+                    <Block row marginTop={sizes.sm} marginBottom={sizes.s} marginLeft={sizes.s} marginRight={sizes.sm}>
+                        <FontAwesomeIcon icon={faCheckCircle} style={{marginTop: '2%'}} color={colors.success}
+                                         size={26}></FontAwesomeIcon>
+                        <Block row justify='space-between'>
+                            <Block>
+                                <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
+                                    Lorem Epsum
+                                </Text>
+                                <Text p marginLeft={sizes.sm} size={12} font={fonts.thin} weight={weights.p} h4>
+                                    18 Sept 2021
+                                </Text>
+                            </Block>
+                            <Text p marginLeft={sizes.sm} font={fonts.p} marginTop={10} weight={weights.p} h4>
+                                - &#x20B9;1500
+                            </Text>
+                        </Block>
+                    </Block>
+                    <Separator borderWidth={1}></Separator>
+                    <Block row marginTop={sizes.sm} marginBottom={sizes.s} marginLeft={sizes.s} marginRight={sizes.sm}>
+                        <FontAwesomeIcon icon={faCheckCircle} style={{marginTop: '2%'}} color={colors.success}
+                                         size={26}></FontAwesomeIcon>
+                        <Block row justify='space-between'>
+                            <Block>
+                                <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
+                                    Lorem Epsum
+                                </Text>
+                                <Text p marginLeft={sizes.sm} size={12} font={fonts.thin} weight={weights.p} h4>
+                                    18 Sept 2021
+                                </Text>
+                            </Block>
+                            <Text p marginLeft={sizes.sm} font={fonts.p} marginTop={10} weight={weights.p} h4>
+                                - &#x20B9;1500
+                            </Text>
+                        </Block>
+                    </Block>
+                    <Separator borderWidth={1}></Separator>
+                    <Block row marginTop={sizes.sm} marginBottom={sizes.s} marginLeft={sizes.s} marginRight={sizes.sm}>
+                        <FontAwesomeIcon icon={faCheckCircle} style={{marginTop: '2%'}} color={colors.success}
+                                         size={26}></FontAwesomeIcon>
+                        <Block row justify='space-between'>
+                            <Block>
+                                <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
+                                    Lorem Epsum
+                                </Text>
+                                <Text p marginLeft={sizes.sm} size={12} font={fonts.thin} weight={weights.p} h4>
+                                    18 Sept 2021
+                                </Text>
+                            </Block>
+                            <Text p marginLeft={sizes.sm} font={fonts.p} marginTop={10} weight={weights.p} h4>
+                                - &#x20B9;1500
+                            </Text>
+                        </Block>
+                    </Block>
+                    <Separator borderWidth={1}></Separator>
+                    <Block row marginTop={sizes.sm} marginBottom={sizes.s} marginLeft={sizes.s} marginRight={sizes.sm}>
+                        <FontAwesomeIcon icon={faCheckCircle} style={{marginTop: '2%'}} color={colors.success}
+                                         size={26}></FontAwesomeIcon>
+                        <Block row justify='space-between'>
+                            <Block>
+                                <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
+                                    Lorem Epsum
+                                </Text>
+                                <Text p marginLeft={sizes.sm} size={12} font={fonts.thin} weight={weights.p} h4>
+                                    18 Sept 2021
+                                </Text>
+                            </Block>
+                            <Text p marginLeft={sizes.sm} font={fonts.p} marginTop={10} weight={weights.p} h4>
+                                - &#x20B9;1500
+                            </Text>
+                        </Block>
+                    </Block>
+                    <Separator borderWidth={1}></Separator>
+                    <Block row marginTop={sizes.sm} marginBottom={sizes.s} marginLeft={sizes.s} marginRight={sizes.sm}>
+                        <FontAwesomeIcon icon={faCheckCircle} style={{marginTop: '2%'}} color={colors.success}
+                                         size={26}></FontAwesomeIcon>
+                        <Block row justify='space-between'>
+                            <Block>
+                                <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
+                                    Lorem Epsum
+                                </Text>
+                                <Text p marginLeft={sizes.sm} size={12} font={fonts.thin} weight={weights.p} h4>
+                                    18 Sept 2021
+                                </Text>
+                            </Block>
+                            <Text p marginLeft={sizes.sm} font={fonts.p} marginTop={10} weight={weights.p} h4>
+                                - &#x20B9;1500
+                            </Text>
+                        </Block>
+                    </Block>
+                    <Separator borderWidth={1}></Separator>
+                    <Block row marginTop={sizes.sm} marginBottom={sizes.s} marginLeft={sizes.s} marginRight={sizes.sm}>
+                        <FontAwesomeIcon icon={faCheckCircle} style={{marginTop: '2%'}} color={colors.success}
+                                         size={26}></FontAwesomeIcon>
+                        <Block row justify='space-between'>
+                            <Block>
+                                <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
+                                    Lorem Epsum
+                                </Text>
+                                <Text p marginLeft={sizes.sm} size={12} font={fonts.thin} weight={weights.p} h4>
+                                    18 Sept 2021
+                                </Text>
+                            </Block>
+                            <Text p marginLeft={sizes.sm} font={fonts.p} marginTop={10} weight={weights.p} h4>
+                                - &#x20B9;1500
+                            </Text>
+                        </Block>
+                    </Block>
+
+
                 </Block>
 
         </Block>

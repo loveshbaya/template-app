@@ -3,7 +3,7 @@ import {StyleSheet, ViewStyle,} from 'react-native';
 
 import useTheme from '../hooks/useTheme';
 import {ISeparatorProps} from '../constants/types';
-import {Block} from "./index";
+import Block from './Block';
 
 const Separator = (props: ISeparatorProps) => {
     const {
