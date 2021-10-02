@@ -114,7 +114,7 @@ export default function BarCodeScreen(
                     />
                 ) : null}
 
-                <View style={[styles.header, { top: 40 + top }]}>
+                <View style={[styles.header, {top: 50}]}>
                     <Hint>Scan QR code</Hint>
                 </View>
 

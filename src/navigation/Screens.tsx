@@ -15,9 +15,9 @@ import {
     QRInfo,
     QRScanner,
     Register,
+    TransactionDetail,
     UpiPay,
-    UserProfile,
-    TransactionDetail
+    UserProfile
 } from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
@@ -111,11 +111,11 @@ export default () => {
             options={screenOptions.back}
         />
          <Stack.Screen
-            name="TransactionDetail"
-            component={TransactionDetail}
-            options={screenOptions.back}
+             name="TransactionDetail"
+             component={TransactionDetail}
+             options={screenOptions.transactionDetail}
         />
-        
+
     </Stack.Navigator>
   );
 };

@@ -88,7 +88,8 @@
     "login": "Login",
     "extra": "Automotive",
     "shopping": "Shopping Cart",
-    "userprofile": "Profile"
+    "userprofile": "Profile",
+    "transactionDetail": "Detail"
   },
   "menu": {
     "started": "Getting Started",

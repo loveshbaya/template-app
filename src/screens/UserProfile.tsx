@@ -23,7 +23,7 @@ const UserProfile = () => {
                 contentContainerStyle={{paddingVertical: sizes.padding}}>
                 <Block card radius={1}>
                     <Block row marginBottom={sizes.m}>
-                        <Block marginLeft={sizes.md} padding={sizes.s} justify="space-between">
+                        <Block marginLeft={sizes.sm} padding={sizes.s} justify="space-between">
                             <Text font={fonts.thin} size={sizes.h4} weight={weights.p} h4>
                                 Lovesh Baya
                             </Text>
@@ -85,7 +85,13 @@ const UserProfile = () => {
                         <FontAwesomeIcon icon={faHistory} color={colors.primaryBlue} size={24}></FontAwesomeIcon>
                     </Block>
                     <Separator borderWidth={2}></Separator>
-                    <Block row marginTop={sizes.sm} marginBottom={sizes.s} marginLeft={sizes.s} marginRight={sizes.sm}>
+                    <Block row marginTop={sizes.sm} marginBottom={sizes.s} marginLeft={sizes.s} marginRight={sizes.sm}
+                           onTouchStart={() => {
+                               Vibration.vibrate(50);
+                               navigation.navigate('TransactionDetail')
+                           }
+                           }
+                    >
                         <FontAwesomeIcon icon={faCheckCircle} style={{marginTop: '2%'}} color={colors.success}
                                          size={26}></FontAwesomeIcon>
                         <Block row justify='space-between'>
