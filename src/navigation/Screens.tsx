@@ -104,7 +104,7 @@ export default () => {
         <Stack.Screen
             name="PaymentOptions"
             component={PaymentOptions}
-            options={{headerShown: false}}
+            options={screenOptions.paymentOptions}
         />
         <Stack.Screen
             name="CashBack"
@@ -119,7 +119,7 @@ export default () => {
          <Stack.Screen
              name="Wallet"
              component={Wallet}
-             options={{headerShown: false}}
+             options={screenOptions.back}
         />
 
     </Stack.Navigator>

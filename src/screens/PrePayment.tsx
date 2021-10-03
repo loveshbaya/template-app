@@ -19,7 +19,7 @@ const PrePayment = ({nav, route}) => {
     const contact = "9929496321"
     const email = "sumit@k2io.com"
     const [amount, setAmount] = useState(0)
-    
+
     let paymentDetails = {}
     paymentDetails.merchantName = merchantName;
     paymentDetails.business = business;
@@ -82,7 +82,11 @@ const PrePayment = ({nav, route}) => {
                             Enter Amount to Pay
                         </Text>
                         <Block justify={"space-evenly"}>
-                            <Input inr id="upiId" placeholder={"0"} onIconTouchStart={() => navigation.navigate('PaymentOptions',{paymentDetails})}
+                            <Input inr id="upiId" placeholder={"0"}
+                                   onIconTouchStart={() => navigation.navigate('PaymentOptions', {
+                                       paymentDetails,
+                                       type: "Merchant"
+                                   })}
                                    onChangeText={amount => setAmount(amount)}
                                    keyboardType='number-pad' marginBottom={sizes.sm}/>
                         </Block>

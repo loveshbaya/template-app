@@ -14,7 +14,6 @@ const UserProfile = () => {
     const navigation = useNavigation();
     const {user} = useData();
     const {assets, colors, sizes, fonts, weights} = useTheme();
-    console.log("On User profile")
     return (
         <Block safe>
             <Block
@@ -52,8 +51,8 @@ const UserProfile = () => {
                                navigation.navigate('Wallet')
                            }
                            }
-                    
-                    row marginTop={sizes.sm} marginBottom={sizes.sm}>
+
+                           row marginTop={sizes.sm} marginBottom={sizes.sm}>
                         <FontAwesomeIcon icon={faWallet} color={colors.primaryBlue} size={24}></FontAwesomeIcon>
                         <Block row justify='space-between'>
                             <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>

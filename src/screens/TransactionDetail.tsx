@@ -14,7 +14,6 @@ const TransactionDetail = () => {
   const navigation = useNavigation();
   const {assets, colors, sizes, fonts, weights} = useTheme();
   const {user} = useData();
-  console.log("hello")
   return (
       <Block safe>
         <Block scroll showsVerticalScrollIndicator={true}

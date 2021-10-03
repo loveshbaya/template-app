@@ -31,6 +31,7 @@ const Input = ({
   indPhoneNumber,
                    inr,
                    onIconTouchStart,
+                   inrNoSubmit,
   marginBottom,
   marginTop,
   marginHorizontal,
@@ -41,7 +42,7 @@ const Input = ({
   onBlur,
   ...props
 }: IInputProps) => {
-  const {assets, colors, sizes} = useTheme();
+    const {assets, colors, sizes, fonts} = useTheme();
   const [isFocused, setFocused] = useState(false);
 
   const handleFocus = useCallback(
@@ -144,10 +145,7 @@ const Input = ({
           />
         )}
         {inr && assets.inr && (
-            <Image
-                source={assets.inr}
-                style={{marginLeft: sizes.inputPadding, height: 33, width: 22}}
-            />
+            <Text h2 size={sizes.h2} color={colors.icon} font={fonts.p} h2> &#x20B9;</Text>
         )}
         {icon && (
           <Image
@@ -164,7 +162,7 @@ const Input = ({
           onFocus={(event) => handleFocus(event, true)}
           onBlur={(event) => handleFocus(event, false)}
         />
-        {inr && (
+          {inr && !inrNoSubmit && (
             <View onTouchStart={onIconTouchStart}>
               <FontAwesomeIcon icon={faAngleDoubleRight} color={colors.primaryBlue} size={42}></FontAwesomeIcon>
             </View>)

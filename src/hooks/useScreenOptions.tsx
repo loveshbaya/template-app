@@ -140,6 +140,28 @@ export default () => {
           ),
       },
 
+      paymentOptions: {
+          ...menu,
+          headerRight: () => null,
+          headerTitle: () => (
+              <Text p black>
+                  {t('navigation.paymentOptions')}
+              </Text>
+          ),
+          headerLeft: () => (
+              <Button onPress={() => navigation.goBack()}>
+                  <Image
+                      radius={0}
+                      width={10}
+                      height={18}
+                      color={colors.icon}
+                      source={icons.arrow}
+                      transform={[{rotate: '180deg'}]}
+                  />
+              </Button>
+          ),
+      },
+
       transactionDetail: {
           ...menu,
           headerRight: () => null,

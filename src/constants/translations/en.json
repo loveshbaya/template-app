@@ -89,7 +89,8 @@
     "extra": "Automotive",
     "shopping": "Shopping Cart",
     "userprofile": "Profile",
-    "transactionDetail": "Detail"
+    "transactionDetail": "Detail",
+    "paymentOptions": "Payment"
   },
   "menu": {
     "started": "Getting Started",

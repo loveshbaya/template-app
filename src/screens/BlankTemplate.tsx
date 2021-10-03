@@ -10,7 +10,7 @@ const isAndroid = Platform.OS === 'android';
 const BlankTemplate = () => {
   const {t} = useTranslation();
   const navigation = useNavigation();
-  const {assets, colors, sizes} = useTheme();
+    const {assets, colors, sizes, fonts, weights} = useTheme();
   console.log("hello")
   return (
       <Block safe>
