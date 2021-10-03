@@ -17,7 +17,8 @@ import {
     Register,
     TransactionDetail,
     UpiPay,
-    UserProfile
+    UserProfile,
+    Wallet
 } from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
@@ -114,6 +115,11 @@ export default () => {
              name="TransactionDetail"
              component={TransactionDetail}
              options={screenOptions.transactionDetail}
+        />
+         <Stack.Screen
+             name="Wallet"
+             component={Wallet}
+             options={{headerShown: false}}
         />
 
     </Stack.Navigator>

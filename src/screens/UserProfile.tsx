@@ -46,7 +46,14 @@ const UserProfile = () => {
                             </Block>
                         </Block>
                     </Block>
-                    <Block marginLeft={sizes.s} row marginTop={sizes.sm} marginBottom={sizes.sm}>
+                    <Block marginLeft={sizes.s}
+                    onTouchStart={() => {
+                               Vibration.vibrate(50);
+                               navigation.navigate('Wallet')
+                           }
+                           }
+                    
+                    row marginTop={sizes.sm} marginBottom={sizes.sm}>
                         <FontAwesomeIcon icon={faWallet} color={colors.primaryBlue} size={24}></FontAwesomeIcon>
                         <Block row justify='space-between'>
                             <Text p marginLeft={sizes.sm} font={fonts.p} weight={weights.p} h4>
