@@ -67,7 +67,8 @@
     "register": "Create account",
     "extra": "Extra - Automotive",
     "qrscanner": "QR Scanner",
-    "signin": "Sign In"
+    "signin": "Sign In",
+    "signup": "Sign Up",
   },
   "navigation": {
     "home": "PayMe",

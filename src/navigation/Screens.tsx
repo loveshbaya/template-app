@@ -19,7 +19,8 @@ import {
     UpiPay,
     UserProfile,
     Wallet,
-    SignIn
+    SignIn,
+    SignUp
 } from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
@@ -125,6 +126,11 @@ export default () => {
         <Stack.Screen
              name="SignIn"
              component={SignIn}
+             options={{headerShown: false}}
+        />
+        <Stack.Screen
+             name="SignUp"
+             component={SignUp}
              options={{headerShown: false}}
         />
 
