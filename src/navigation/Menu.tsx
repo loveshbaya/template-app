@@ -94,7 +94,7 @@ const DrawerContent = (
     {name: t('screens.qrinfo'), to: 'QRInfo', icon: assets.settings},
     {name: t('screens.register'), to: 'Register', icon: assets.register},
     {name: t('screens.extra'), to: 'Pro', icon: assets.extras},
-    {name: t('screens.qrscanner'), to: 'QRScanner', icon: assets.qrscanner},
+    {name: t('screens.signin'), to: 'SignIn', icon: assets.signin},
   ];
 
   return (

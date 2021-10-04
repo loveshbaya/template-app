@@ -18,7 +18,8 @@ import {
     TransactionDetail,
     UpiPay,
     UserProfile,
-    Wallet
+    Wallet,
+    SignIn
 } from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
@@ -120,6 +121,11 @@ export default () => {
              name="Wallet"
              component={Wallet}
              options={screenOptions.back}
+        />
+        <Stack.Screen
+             name="SignIn"
+             component={SignIn}
+             options={{headerShown: false}}
         />
 
     </Stack.Navigator>

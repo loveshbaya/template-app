@@ -242,6 +242,7 @@ export interface ThemeIcons {
   users: ImageSourcePropType;
   warning: ImageSourcePropType;
   qrscanner: ImageSourcePropType;
+  signin: ImageSourcePropType;
 }
 
 export interface ThemeAssets {
