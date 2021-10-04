@@ -42,7 +42,7 @@ const Checkbox = ({
         width={sizes.checkboxWidth}
         height={sizes.checkboxHeight}
         radius={sizes.checkboxRadius}
-        gradient={checked ? colors.checkbox : undefined}
+        color={checked ? colors.primaryBlue : undefined}
         {...props}>
         {checked && (
           <Image
