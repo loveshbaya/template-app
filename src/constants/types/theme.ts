@@ -251,6 +251,11 @@ export interface ThemeAssets {
   OpenSansSemiBold?: any;
   OpenSansExtraBold?: any;
   OpenSansBold?: any;
+  HelveticaRegular?: any;
+  HelveticaBold?: any;
+  HelveticaBoldOblique?: any;
+  HelveticaLight?: any;
+  HelveticaOblique?: any;
   SolidIcons?: any;
 
   logo: ImageSourcePropType;
@@ -304,6 +309,11 @@ export interface ThemeFonts {
   semibold: string;
   extrabold: string;
   black: string;
+  helveticaRegular: string;
+  helveticaBold: string;
+  helveticaBoldOblique: string;
+  helveticaLight: string;
+  helveticaOblique: string;
 }
 
 export interface ThemeLineHeights {

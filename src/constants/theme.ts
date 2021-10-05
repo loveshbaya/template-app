@@ -74,6 +74,11 @@ export const ASSETS: ThemeAssets = {
   OpenSansExtraBold: require('../assets/fonts/OpenSans-ExtraBold.ttf'),
   OpenSansBold: require('../assets/fonts/OpenSans-Bold.ttf'),
   SolidIcons: require('../assets/fonts/fa-solid-900.ttf'),
+  HelveticaRegular: require('../assets/fonts/Helvetica.ttf'),
+  HelveticaBold: require('../assets/fonts/Helvetica-Bold.ttf'),
+  HelveticaBoldOblique: require('../assets/fonts/Helvetica-BoldOblique.ttf'),
+  HelveticaLight: require('../assets/fonts/helvetica-Light.ttf'),
+  HelveticaOblique: require('../assets/fonts/Helvetica-Oblique.ttf'),
 
   // backgrounds/logo
   logo: require('../assets/images/logo.png'),
@@ -133,6 +138,11 @@ export const FONTS: ThemeFonts = {
   bold: 'OpenSans-Bold',
   extrabold: 'OpenSans-ExtraBold',
   black: 'OpenSans-ExtraBold',
+  helveticaRegular: 'Helvetica',
+  helveticaBold: 'Helvetica-Bold',
+  helveticaBoldOblique: 'Helvetica-BoldOblique',
+  helveticaLight: 'Helvetica-Light',
+  helveticaOblique: 'Helvetica-Oblique',
 };
 
 export const LINE_HEIGHTS: ThemeLineHeights = {

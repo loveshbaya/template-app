@@ -26,6 +26,11 @@ export default () => {
     'OpenSans-SemiBold': theme.assets.OpenSansSemiBold,
     'OpenSans-ExtraBold': theme.assets.OpenSansExtraBold,
     'OpenSans-Bold': theme.assets.OpenSansBold,
+    'Helvetica': theme.assets.HelveticaRegular,
+    'Helvetica-Bold': theme.assets.HelveticaBold,
+    'Helvetica-BoldOblique': theme.assets.HelveticaBoldOblique,
+    'Helvetica-Light': theme.assets.HelveticaLight,
+    'Helvetica-Oblique': theme.assets.HelveticaOblique,
     'SolidIcons': theme.assets.SolidIcons,
   });
 
