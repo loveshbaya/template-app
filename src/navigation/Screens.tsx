@@ -15,12 +15,12 @@ import {
     QRInfo,
     QRScanner,
     Register,
+    SignIn,
+    SignUp,
     TransactionDetail,
     UpiPay,
     UserProfile,
-    Wallet,
-    SignIn,
-    SignUp
+    Wallet
 } from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
@@ -71,9 +71,9 @@ export default () => {
       />
 
     <Stack.Screen
-          name="BlankTemplate"
-          component={BlankTemplate}
-          options={{headerShown: false}}
+        name="BlankTemplate"
+        component={BlankTemplate}
+        options={screenOptions.back}
       />
 
   <Stack.Screen
