@@ -17,6 +17,22 @@ const Home = () => {
     var dataMap = [{}, {}, {}, {}, {}];
     var flipMap = new Map()
 
+    var scratcCards = [assets.scratchCover1, assets.scratchCover2,
+        assets.scratchCover3,
+        assets.scratchCover4,
+        assets.scratchCover5,
+        assets.scratchCover6,
+        assets.scratchCover7,
+        assets.scratchCover8,
+        assets.scratchCover9,
+        assets.scratchCover10,
+        assets.scratchCover11,
+        assets.scratchCover12,
+        assets.scratchCover13,
+        assets.scratchCover14,
+        assets.scratchCover15
+    ]
+
   return (
       <Block safe>
           <Block scroll showsVerticalScrollIndicator={true}
@@ -106,7 +122,8 @@ const Home = () => {
                               console.log(index, value);
                               if (index % 2 == 0 && dataMap.length >= index + 2) {
                                   return (
-                                      <Block row justify="space-evenly" marginBottom={sizes.sm}>
+                                      <Block key={"block" + index} id={"block" + index} row justify="space-evenly"
+                                             marginBottom={sizes.sm}>
                                           <CardFlip flipDirection={'y'} duration={500} style={{
                                               minHeight: 130,
                                               minWidth: sizes.width * 0.4,
@@ -117,15 +134,18 @@ const Home = () => {
                                                      onTouchStart={() => flipMap.get(index).flip()}>
                                                   <Image
                                                       resizeMode="cover"
-                                                      source={assets?.card2}
+                                                      source={scratcCards[index]}
                                                       width={"100%"}
+                                                      height={"100%"}
                                                   />
                                               </Block>
-                                              <Block card onTouchStart={() => flipMap.get(index).flip()}>
+                                              <Block card marginRight={sizes.sm}
+                                                     onTouchStart={() => flipMap.get(index).flip()}>
                                                   <Image
                                                       resizeMode="cover"
-                                                      source={assets?.card3}
+                                                      source={assets?.scratchCover10}
                                                       width={"100%"}
+                                                      height={"100%"}
                                                   />
                                               </Block>
                                           </CardFlip>
@@ -139,15 +159,18 @@ const Home = () => {
                                                      onTouchStart={() => flipMap.get(index + 1).flip()}>
                                                   <Image
                                                       resizeMode="cover"
-                                                      source={assets?.card2}
+                                                      source={scratcCards[index + 1]}
                                                       width={"100%"}
+                                                      height={"100%"}
                                                   />
                                               </Block>
-                                              <Block card onTouchStart={() => flipMap.get(index).flip()}>
+                                              <Block card marginRight={sizes.sm}
+                                                     onTouchStart={() => flipMap.get(index + 1).flip()}>
                                                   <Image
                                                       resizeMode="cover"
                                                       source={assets?.card3}
                                                       width={"100%"}
+                                                      height={"100%"}
                                                   />
                                               </Block>
                                           </CardFlip>
@@ -155,7 +178,8 @@ const Home = () => {
                                   );
                               } else if (index % 2 == 0) {
                                   return (
-                                      <Block row justify="center" marginBottom={sizes.sm}>
+                                      <Block key={"block" + index} id={"block" + index} row justify="center"
+                                             marginBottom={sizes.sm}>
                                           <CardFlip flipDirection={'y'} duration={500} style={{
                                               minHeight: 130,
                                               minWidth: sizes.width * 0.4,
@@ -166,15 +190,18 @@ const Home = () => {
                                                      onTouchStart={() => flipMap.get(index).flip()}>
                                                   <Image
                                                       resizeMode="cover"
-                                                      source={assets?.card2}
+                                                      source={scratcCards[index]}
                                                       width={"100%"}
+                                                      height={"100%"}
                                                   />
                                               </Block>
-                                              <Block card onTouchStart={() => flipMap.get(index).flip()}>
+                                              <Block card marginRight={sizes.sm}
+                                                     onTouchStart={() => flipMap.get(index).flip()}>
                                                   <Image
                                                       resizeMode="cover"
                                                       source={assets?.card3}
                                                       width={"100%"}
+                                                      height={"100%"}
                                                   />
                                               </Block>
                                           </CardFlip>

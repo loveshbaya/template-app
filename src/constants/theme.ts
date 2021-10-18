@@ -94,6 +94,22 @@ export const ASSETS: ThemeAssets = {
   card4: require('../assets/images/card4.png'),
   card5: require('../assets/images/card5.png'),
 
+  scratchCover1: require('../assets/images/scratch-card-cover-1.jpg'),
+  scratchCover2: require('../assets/images/scratch-card-cover-2.jpg'),
+  scratchCover3: require('../assets/images/scratch-card-cover-3.jpg'),
+  scratchCover4: require('../assets/images/scratch-card-cover-4.jpg'),
+  scratchCover5: require('../assets/images/scratch-card-cover-5.jpg'),
+  scratchCover6: require('../assets/images/scratch-card-cover-6.jpg'),
+  scratchCover7: require('../assets/images/scratch-card-cover-7.jpg'),
+  scratchCover8: require('../assets/images/scratch-card-cover-8.jpg'),
+  scratchCover9: require('../assets/images/scratch-card-cover-9.jpg'),
+  scratchCover10: require('../assets/images/scratch-card-cover-10.jpg'),
+  scratchCover11: require('../assets/images/scratch-card-cover-11.jpg'),
+  scratchCover12: require('../assets/images/scratch-card-cover-12.jpg'),
+  scratchCover13: require('../assets/images/scratch-card-cover-13.jpg'),
+  scratchCover14: require('../assets/images/scratch-card-cover-14.jpg'),
+  scratchCover15: require('../assets/images/scratch-card-cover-15.jpg'),
+
   // gallery photos
   photo1: require('../assets/images/photo1.png'),
   photo2: require('../assets/images/photo2.png'),

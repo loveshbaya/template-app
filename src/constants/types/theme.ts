@@ -262,6 +262,22 @@ export interface ThemeAssets {
   header: ImageSourcePropType;
   background: ImageSourcePropType;
 
+  scratchCover1: ImageSourcePropType;
+  scratchCover2: ImageSourcePropType;
+  scratchCover3: ImageSourcePropType;
+  scratchCover4: ImageSourcePropType;
+  scratchCover5: ImageSourcePropType;
+  scratchCover6: ImageSourcePropType;
+  scratchCover7: ImageSourcePropType;
+  scratchCover8: ImageSourcePropType;
+  scratchCover9: ImageSourcePropType;
+  scratchCover10: ImageSourcePropType;
+  scratchCover11: ImageSourcePropType;
+  scratchCover12: ImageSourcePropType;
+  scratchCover13: ImageSourcePropType;
+  scratchCover14: ImageSourcePropType;
+  scratchCover15: ImageSourcePropType;
+
   card1: ImageSourcePropType;
   card2: ImageSourcePropType;
   card3: ImageSourcePropType;
