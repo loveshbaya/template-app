@@ -20,7 +20,8 @@ import {
     TransactionDetail,
     UpiPay,
     UserProfile,
-    Wallet
+    Wallet,
+    Services
 } from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
@@ -133,6 +134,11 @@ export default () => {
              component={SignUp}
              options={{headerShown: false}}
         />
+        <Stack.Screen
+        name="Services"
+        component={Services}
+        options={screenOptions.back}
+      />
 
     </Stack.Navigator>
   );

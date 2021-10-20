@@ -146,8 +146,8 @@ const Home = () => {
                                   Pharmacy
                               </Text>
                           </Block>
-                          <Block style={{maxWidth: 65}} align={"center"}>
-                              <FontAwesomeIcon size={sizes.md} icon={faClone} color={colors.icon}></FontAwesomeIcon>
+                          <Block style={{maxWidth: 65}} align={"center"}  >
+                              <FontAwesomeIcon size={sizes.md} icon={faClone} color={colors.icon} onPress={() => navigation.navigate('Services')} ></FontAwesomeIcon>
                               <Text align={"center"} marginTop={sizes.s} lineHeight={17} font={fonts.p} size={11} p>
                                   more...
                               </Text>
