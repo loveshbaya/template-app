@@ -48,9 +48,8 @@ const PrePayment = ({nav, route}) => {
     console.log("Data from : ", route.params.type, " is ", data);
     var qrcode = data + "@" + merchantName + "@" + business + "@" + contact + "@" + email;
     return (
-        <Block safe marginTop={sizes.md} marginBottom={sizes.md} paddingHorizontal={sizes.padding}>
-            <Block scroll showsVerticalScrollIndicator={true}>
-                <Block card marginTop={sizes.sm} align={"center"} color={'#ADD8E6'}>
+        <Block scroll showsVerticalScrollIndicator={true}>
+            <Block radius={1} card align={"center"} marginTop={sizes.sm}>
                     <Image
                         width={110}
                         height={110}
@@ -70,7 +69,8 @@ const PrePayment = ({nav, route}) => {
                     <Text h6 bold center>
                         9929496321
                     </Text>
-                    <Block card marginTop={sizes.sm} align={"center"} radius={1} color={'#ADD8E6'}>
+                <Block style={{borderWidth: 1, borderColor: colors.icon}} marginTop={sizes.sm} align={"center"}
+                       radius={1} color={colors.icon}>
                         <QRCode size={168} value={qrcode}>
                         </QRCode>
                     </Block>
@@ -101,7 +101,6 @@ const PrePayment = ({nav, route}) => {
                 </Block>*/}
 
             </Block>
-        </Block>
     );
 };
 

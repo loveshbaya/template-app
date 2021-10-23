@@ -106,7 +106,7 @@ const Home = () => {
               </Block>
               <Block marginTop={sizes.s} card radius={1}>
                   <Block row marginLeft={sizes.md} marginBottom={sizes.sm}>
-                      <FontAwesomeIcon icon={faAngleRight} color={colors.icon}
+                      <FontAwesomeIcon icon={faAngleRight}
                                        style={{marginLeft: sizes.xs, marginTop: sizes.s}}></FontAwesomeIcon>
                       <Text marginTop={sizes.s} font={fonts.helveticaRegular} h5>
                           Services
@@ -115,19 +115,19 @@ const Home = () => {
                   <Block marginLeft={sizes.sm} marginRight={sizes.sm}>
                       <Block row justify={"space-evenly"} marginBottom={sizes.m}>
                           <Block style={{maxWidth: 65}} align={"center"}>
-                              <FontAwesomeIcon size={sizes.md} icon={faCoffee} color={colors.icon}></FontAwesomeIcon>
+                              <FontAwesomeIcon size={sizes.md} icon={faCoffee}></FontAwesomeIcon>
                               <Text align={"center"} marginTop={sizes.s} lineHeight={17} font={fonts.p} size={11} p>
                                   Cafe
                               </Text>
                           </Block>
                           <Block style={{maxWidth: 65}} align={"center"}>
-                              <FontAwesomeIcon size={sizes.md} icon={faDumbbell} color={colors.icon}></FontAwesomeIcon>
+                              <FontAwesomeIcon size={sizes.md} icon={faDumbbell}></FontAwesomeIcon>
                               <Text align={"center"} marginTop={sizes.s} lineHeight={17} font={fonts.p} size={11} p>
                                   GYM
                               </Text>
                           </Block>
                           <Block style={{maxWidth: 65}} align={"center"}>
-                              <FontAwesomeIcon size={sizes.md} icon={faUtensils} color={colors.icon}></FontAwesomeIcon>
+                              <FontAwesomeIcon size={sizes.md} icon={faUtensils}></FontAwesomeIcon>
                               <Text align={"center"} marginTop={sizes.s} lineHeight={17} font={fonts.p} size={11} p>
                                   Restaurants
                               </Text>
@@ -135,19 +135,20 @@ const Home = () => {
                       </Block>
                       <Block row justify={"space-evenly"} marginBottom={sizes.m}>
                           <Block style={{maxWidth: 65}} align={"center"}>
-                              <FontAwesomeIcon size={sizes.md} icon={faHotel} color={colors.icon}></FontAwesomeIcon>
+                              <FontAwesomeIcon size={sizes.md} icon={faHotel}></FontAwesomeIcon>
                               <Text align={"center"} marginTop={sizes.s} lineHeight={17} font={fonts.p} size={11} p>
                                   Hotels
                               </Text>
                           </Block>
                           <Block style={{maxWidth: 65}} align={"center"}>
-                              <FontAwesomeIcon size={sizes.md} icon={faPills} color={colors.icon}></FontAwesomeIcon>
+                              <FontAwesomeIcon size={sizes.md} icon={faPills}></FontAwesomeIcon>
                               <Text align={"center"} marginTop={sizes.s} lineHeight={17} font={fonts.p} size={11} p>
                                   Pharmacy
                               </Text>
                           </Block>
                           <Block style={{maxWidth: 65}} align={"center"}  >
-                              <FontAwesomeIcon size={sizes.md} icon={faClone} color={colors.icon} onPress={() => navigation.navigate('Services')} ></FontAwesomeIcon>
+                              <FontAwesomeIcon size={sizes.md} icon={faClone}
+                                               onPress={() => navigation.navigate('Services')}></FontAwesomeIcon>
                               <Text align={"center"} marginTop={sizes.s} lineHeight={17} font={fonts.p} size={11} p>
                                   more...
                               </Text>
@@ -158,7 +159,7 @@ const Home = () => {
               </Block>
               <Block marginTop={sizes.s} card radius={1}>
                   <Block row marginLeft={sizes.md} marginBottom={sizes.sm}>
-                      <FontAwesomeIcon icon={faAngleRight} color={colors.icon}
+                      <FontAwesomeIcon icon={faAngleRight}
                                        style={{marginLeft: sizes.xs, marginTop: sizes.s}}></FontAwesomeIcon>
                       <Text marginTop={sizes.s} font={fonts.helveticaRegular} h5>
                           Rewards

@@ -15,9 +15,8 @@ const PhonePay = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
 
   return (
-    <Block safe marginTop={sizes.md} marginBottom={sizes.md} paddingHorizontal={sizes.padding}>
-    <Block scroll showsVerticalScrollIndicator={true}>
-        <Block card marginTop={sizes.sm} >
+      <Block scroll showsVerticalScrollIndicator={true}>
+          <Block radius={1} card marginTop={sizes.sm}>
             <Text
                   h5
                   bold
@@ -48,7 +47,6 @@ const PhonePay = () => {
           </Block>
         </Block>
     </Block>
-</Block>
   );
 };
 

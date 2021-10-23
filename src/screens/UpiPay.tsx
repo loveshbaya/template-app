@@ -14,9 +14,8 @@ const UpiPay = () => {
     const [upiId, setUpiId] = useState('');
 
   return (
-    <Block safe marginTop={sizes.md} marginBottom={sizes.md} paddingHorizontal={sizes.padding}>
     <Block scroll showsVerticalScrollIndicator={true}>
-        <Block card marginTop={sizes.sm} >
+        <Block radius={1} card marginTop={sizes.sm}>
             <Text
                   h5
                   bold
@@ -45,7 +44,6 @@ const UpiPay = () => {
           </Block>
         </Block>
     </Block>
-</Block>
   );
 };
 

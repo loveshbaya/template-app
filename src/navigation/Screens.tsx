@@ -15,13 +15,13 @@ import {
     QRInfo,
     QRScanner,
     Register,
+    Services,
     SignIn,
     SignUp,
     TransactionDetail,
     UpiPay,
     UserProfile,
-    Wallet,
-    Services
+    Wallet
 } from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
@@ -84,20 +84,20 @@ export default () => {
       />
 
     <Stack.Screen
-          name="PhonePay"
-          component={PhonePay}
-          options={{headerShown: false}}
+        name="PhonePay"
+        component={PhonePay}
+        options={screenOptions.back}
       />
 
     <Stack.Screen
-          name="UpiPay"
-          component={UpiPay}
-          options={{headerShown: false}}
+        name="UpiPay"
+        component={UpiPay}
+        options={screenOptions.back}
       />
         <Stack.Screen
             name="PrePayment"
             component={PrePayment}
-            options={{headerShown: false}}
+            options={screenOptions.back}
         />
         <Stack.Screen
             name="UserProfile"
